@@ -1,0 +1,15 @@
+#!/bin/sh
+UNMUT="Sound unmuted"
+MUT="Sound muted"
+
+amixer -q set Master toggle
+
+if [ -f ~/.aumixtmp ] ; then
+    echo "$UNMUT" | osd_cat -d 3 -s 1 -c blue -A center -p middle -f "-misc-fixed-medium-r-normal-*-*-150-*-*-c-*-iso8859-15"
+    rm -f ~/.aumixtmp
+else
+    touch ~/.aumixtmp
+    echo "$MUT" | osd_cat -d 3 -s 1 -c blue -A center -p middle -f "-misc-fixed-medium-r-normal-*-*-150-*-*-c-*-iso8859-15"
+fi
+
+# vim: filetype=sh textwidth=80
