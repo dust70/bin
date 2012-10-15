@@ -31,7 +31,7 @@ function git_command () {
     git prune-packed --quiet
 }
 
-    function svn_command () {
+function svn_command () {
     git svn fetch || return 1
     git svn rebase || return 1
 }
