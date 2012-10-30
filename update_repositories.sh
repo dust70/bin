@@ -72,11 +72,13 @@ git_repos["etc"]="git:etc"
 git_repos["gitolite-admin"]="git:gitolite-admin"
 git_repos["html/www.rene-six.de"]="git:html/www.rene-six.de"
 git_repos["latex/application"]="git:latex/application"
+git_repos["latex/invoice"]="git:latex/invoice"
 
 git_repos["work/self/tectum.de"]="git:work/self/tectum.de"
 
+git_repos["work/stauzebach/autowaschpark-marburg.de"]="git:work/stauzebach/autowaschpark-marburg.de"
 git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
-git_repos["work/stauzebach/homepage-truckwash"]="git:work/stauzebach/homepage-truckwash"
+git_repos["work/stauzebach/truckwash-remsfeld.de"]="git:work/stauzebach/truckwash-remsfeld.de"
 
 git_repos["ajax/css-pie"]="git://github.com/lojjic/PIE.git"
 git_repos["ajax/jquery"]="git://github.com/jquery/jquery.git"
