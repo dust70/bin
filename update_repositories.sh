@@ -38,12 +38,12 @@ git_repos["dotfiles/vim"]="git:dotfiles/vim"
 git_repos["dotfiles/zsh"]="git:dotfiles/zsh"
 
 git_repos["dotfiles/git/GitIgnore"]="git://github.com/github/gitignore.git"
+
 git_repos["dotfiles/vim/bundle/Align"]="git://github.com/tsaleh/vim-align.git"
 git_repos["dotfiles/vim/bundle/AutoClose"]="git://github.com/Townk/vim-autoclose.git"
-git_repos["dotfiles/vim/bundle/CSV"]="git://github.com/chrisbra/csv.vim.git"
 git_repos["dotfiles/vim/bundle/Calendar"]="git://github.com/mattn/calendar-vim.git"
-git_repos["dotfiles/vim/bundle/CloseTag"]="git://github.com/vim-scripts/closetag.vim.git"
 git_repos["dotfiles/vim/bundle/ColorSchemes"]="git://github.com/flazz/vim-colorschemes.git"
+git_repos["dotfiles/vim/bundle/CSV"]="git://github.com/chrisbra/csv.vim.git"
 git_repos["dotfiles/vim/bundle/DBExt"]="git://github.com/vim-scripts/dbext.vim.git"
 git_repos["dotfiles/vim/bundle/EnhancedCommentify"]="git://github.com/hrp/EnhancedCommentify.git"
 git_repos["dotfiles/vim/bundle/FuGITive"]="git://github.com/tpope/vim-fugitive.git"
@@ -53,24 +53,30 @@ git_repos["dotfiles/vim/bundle/GnuPG"]="git://gitorious.org/vim-gnupg/vim-gnupg.
 git_repos["dotfiles/vim/bundle/GoogleVim"]="git://github.com/vim-scripts/google.vim.git"
 git_repos["dotfiles/vim/bundle/LaTeX"]="git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex"
 git_repos["dotfiles/vim/bundle/NerdTree"]="git://github.com/scrooloose/nerdtree.git"
+git_repos["dotfiles/vim/bundle/PathOGen"]="git://github.com/tpope/vim-pathogen.git"
 git_repos["dotfiles/vim/bundle/PDV"]="git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git"
 git_repos["dotfiles/vim/bundle/PHP-Dictionary"]="git://github.com/vim-scripts/PHP-dictionary.git"
-git_repos["dotfiles/vim/bundle/PathOGen"]="git://github.com/tpope/vim-pathogen.git"
+git_repos["dotfiles/vim/bundle/RagTag"]="git://github.com/tpope/vim-ragtag.git"
 git_repos["dotfiles/vim/bundle/SecureModelines"]="git://github.com/ciaranm/securemodelines.git"
 git_repos["dotfiles/vim/bundle/Session"]="git://github.com/xolox/vim-session.git"
 git_repos["dotfiles/vim/bundle/ShowMarks"]="git://github.com/vim-scripts/ShowMarks.git"
 git_repos["dotfiles/vim/bundle/Snipmate"]="git://github.com/msanders/snipmate.vim.git"
 git_repos["dotfiles/vim/bundle/Supertab"]="git://github.com/ervandew/supertab.git"
-git_repos["dotfiles/vim/bundle/Syntastix"]="git://github.com/scrooloose/syntastic.git"
+git_repos["dotfiles/vim/bundle/Surround"]="git://github.com/tpope/vim-surround.git"
+git_repos["dotfiles/vim/bundle/Syntastic"]="git://github.com/scrooloose/syntastic.git"
 git_repos["dotfiles/vim/bundle/Tagbar"]="git://github.com/majutsushi/tagbar.git"
 git_repos["dotfiles/vim/bundle/UnImpaired"]="git://github.com/tpope/vim-unimpaired.git"
 git_repos["dotfiles/vim/bundle/VimPager"]="git://github.com/rkitover/vimpager.git"
 git_repos["dotfiles/vim/bundle/YankRing"]="git://github.com/vim-scripts/YankRing.vim.git"
 
 git_repos["bin"]="git:bin"
+
 git_repos["etc"]="git:etc"
+
 git_repos["gitolite-admin"]="git:gitolite-admin"
+
 git_repos["html/www.rene-six.de"]="git:html/www.rene-six.de"
+
 git_repos["latex/application"]="git:latex/application"
 git_repos["latex/invoice"]="git:latex/invoice"
 
