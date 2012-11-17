@@ -37,7 +37,7 @@ git_repos["dotfiles/ssh"]="git:dotfiles/ssh"
 git_repos["dotfiles/vim"]="git:dotfiles/vim"
 git_repos["dotfiles/zsh"]="git:dotfiles/zsh"
 
-git_repos["dotfiles/git/GitIgnore"]="git://github.com/github/gitignore.git"
+git_repos["dotfiles/git/GitIgnoreRepo"]="git://github.com/github/gitignore.git"
 
 git_repos["dotfiles/vim/bundle/Align"]="git://github.com/tsaleh/vim-align.git"
 git_repos["dotfiles/vim/bundle/AutoClose"]="git://github.com/Townk/vim-autoclose.git"
@@ -92,8 +92,8 @@ git_repos["ajax/jquery"]="git://github.com/jquery/jquery.git"
 git_repos["grml/grml-etc-core"]="git://git.grml.org/grml-etc-core.git"
 git_repos["grml/zsh-lovers"]="git://git.grml.org/zsh-lovers.git"
 
-git_repos["php/contao-docs"]="git://github.com/contao/docs.git"
 git_repos["php/contao"]="git://github.com/contao/core.git"
+git_repos["php/contao-docs"]="git://github.com/contao/docs.git"
 #}}}
 
 # {{{ subversion repositories
