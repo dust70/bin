@@ -108,11 +108,11 @@ svn_repos["php/wordpress"]="http://core.svn.wordpress.org"
 #}}}
 
 # {{{ branches to use
-branches["dotfiles"]="desktop vserver"
+branches["dotfiles"]="desktop himalia pasiphae server"
 branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
-branches["etc"]="ganymed amalthea desktop gentoo/desktop gentoo/master himalia io"
+branches["etc"]="amalthea desktop debian/desktop debian/master ganymed himalia io"
 #}}}
 
 # {{{ function git_run
