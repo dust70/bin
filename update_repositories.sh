@@ -109,7 +109,7 @@ branches["dotfiles"]="desktop vserver"
 branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
-branches["etc"]="aldebaran amalthea desktop gentoo/desktop gentoo/master himalia io"
+branches["etc"]="ganymed amalthea desktop gentoo/desktop gentoo/master himalia io"
 #}}}
 
 # {{{ function git_run
