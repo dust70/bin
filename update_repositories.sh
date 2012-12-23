@@ -68,6 +68,7 @@ git_repos["dotfiles/vim/bundle/Surround"]="git://github.com/tpope/vim-surround.g
 git_repos["dotfiles/vim/bundle/Syntastic"]="git://github.com/scrooloose/syntastic.git"
 git_repos["dotfiles/vim/bundle/Tagbar"]="git://github.com/majutsushi/tagbar.git"
 git_repos["dotfiles/vim/bundle/UnImpaired"]="git://github.com/tpope/vim-unimpaired.git"
+git_repos["dotfiles/vim/bundle/VCSCommand"]="git://repo.or.cz/vcscommand.git"
 git_repos["dotfiles/vim/bundle/VimPager"]="git://github.com/rkitover/vimpager.git"
 git_repos["dotfiles/vim/bundle/YankRing"]="git://github.com/vim-scripts/YankRing.vim.git"
 
@@ -82,11 +83,15 @@ git_repos["html/www.rene-six.de"]="git:html/www.rene-six.de"
 git_repos["latex/application"]="git:latex/application"
 git_repos["latex/invoice"]="git:latex/invoice"
 
+git_repos["pass"]="git:pass"
+
+git_repos["task"]="git:task"
+
 git_repos["work/self/tectum.de"]="git:work/self/tectum.de"
 
 git_repos["work/stauzebach/autowaschpark-marburg.de"]="git:work/stauzebach/autowaschpark-marburg.de"
 git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
-git_repos["work/stauzebach/rechnungssystem"]="git:work/stauzebach/rechnungssystem"
+#git_repos["work/stauzebach/rechnungssystem"]="git:work/stauzebach/rechnungssystem"
 git_repos["work/stauzebach/truckwash-remsfeld.de"]="git:work/stauzebach/truckwash-remsfeld.de"
 
 git_repos["ajax/css-pie"]="git://github.com/lojjic/PIE.git"
@@ -109,7 +114,7 @@ svn_repos["php/wordpress"]="http://core.svn.wordpress.org"
 #}}}
 
 # {{{ branches to use
-branches["dotfiles"]="desktop himalia pasiphae server"
+branches["dotfiles"]="desktop himalia pasiphae"
 branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
