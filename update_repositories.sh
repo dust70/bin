@@ -91,7 +91,7 @@ git_repos["work/self/tectum.de"]="git:work/self/tectum.de"
 
 git_repos["work/stauzebach/autowaschpark-marburg.de"]="git:work/stauzebach/autowaschpark-marburg.de"
 git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
-#git_repos["work/stauzebach/rechnungssystem"]="git:work/stauzebach/rechnungssystem"
+git_repos["work/stauzebach/rechnungssystem"]="git:work/stauzebach/rechnungssystem"
 git_repos["work/stauzebach/truckwash-remsfeld.de"]="git:work/stauzebach/truckwash-remsfeld.de"
 
 git_repos["ajax/css-pie"]="git://github.com/lojjic/PIE.git"
@@ -118,7 +118,7 @@ branches["dotfiles"]="desktop himalia pasiphae"
 branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
-branches["etc"]="amalthea desktop debian/desktop debian/master ganymed himalia io"
+branches["etc"]="amalthea desktop debian/desktop ganymed himalia io"
 #}}}
 
 # {{{ function git_run
