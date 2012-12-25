@@ -133,6 +133,15 @@ function git_run() {
         return 1
     )
 
+    function git-clean () {
+        git reflog expire --all
+        git fsck --unreachable --full
+        git prune
+        git gc --aggressive --quiet
+        git repack -Adq
+        git prune-packed --quiet
+    }
+
     if [ ! -d "${1}"/.git ]; then
         local -r tmpdir=/tmp${1}
 
@@ -177,14 +186,9 @@ function git_run() {
 
         find "${1}" \( -iname '*.orig' -o -name '*.BASE.*' -o -name '*.LOCAL.*' -o -name '*.REMOTE.*' -o -name '*.BACKUP.*' \) -delete
 
-        git reflog expire --all
-        git fsck --unreachable --full
-        git prune
-        git gc --aggressive --quiet
-        git repack -Adq
-        git prune-packed --quiet
-
         git checkout -q "${local_branches[0]}" >> /dev/null || return 1
+
+        while ! $(git-clean >> /dev/null); do true; done
     fi
 }
 #}}}
