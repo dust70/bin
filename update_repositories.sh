@@ -216,8 +216,12 @@ function git_run() {
         cd "${1}" >> /dev/null
         local -a local_branches=("$(git name-rev --name-only origin/HEAD)" ${3})
 
-        git remote update -p origin >> /dev/null || return 1
+        for key in ${!local_remotes[@]}; do
+            git remote add -f "${key}" "${local_remotes[${key}]}" &> /dev/null
 
+            git remote update -p "${key}" &> /dev/null || return 1
+            git remote prune "${key}" &> /dev/null || return 1
+            
             git fetch -q "${key}" &> /dev/null || return 1
             git fetch -q -t "${key}" &> /dev/null || return 1
         done
