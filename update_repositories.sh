@@ -128,7 +128,23 @@ branches["dotfiles"]="desktop himalia pasiphae"
 branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
+
 branches["etc"]="amalthea desktop debian/desktop ganymed himalia io"
+
+branches["php/contao"]="develop lts"
+
+branches["php/zend_framework"]="develop"
+#}}}
+
+# {{{ function git_clean
+function git_clean () {
+    git reflog expire --all &> /dev/null
+    git fsck --unreachable --full &> /dev/null
+    git prune &> /dev/null
+    git gc --aggressive --quiet &> /dev/null
+    git repack -Adq &> /dev/null
+    git prune-packed --quiet &> /dev/null
+}
 #}}}
 
 # {{{ function git_run
@@ -138,22 +154,36 @@ function git_run() {
         return 1
     fi
 
-    mkdir -p "$(dirname ${1})" >> /dev/null 2>&1 || (
+    mkdir -p "$(dirname ${1})" &> /dev/null || (
         echo "Couldn't create parent directories for" ${1}
         return 1
     )
 
-    function git-clean () {
-        git reflog expire --all
-        git fsck --unreachable --full
-        git prune
-        git gc --aggressive --quiet
-        git repack -Adq
-        git prune-packed --quiet
-    }
+    local -a orig_remotes=(${2})
+    local -A local_remotes=()
+
+    if [ ${#orig_remotes[*]} -lt 1 ]; then
+        echo "no remotes"
+        return 1
+    elif [ ${#orig_remotes[*]} -eq 1 ]; then
+        local_remotes["origin"]="${orig_remotes[0]}"
+    elif (( ${#orig_remotes[*]} % 2 == 0 )); then
+        echo "number of remotes must be odd"
+        return 1
+    else
+        for (( i=0; i < ${#orig_remotes[*]}; i++ )); do
+            if [ ${i} -eq 0 ]; then
+                local key="origin"
+            else
+                local key=${orig_remotes[${i}]}
+                ((i++))
+            fi
+            local_remotes["${key}"]="${orig_remotes[${i}]}"
+        done
+    fi
 
     if [ ! -d "${1}"/.git ]; then
-        local -r tmpdir=/tmp${1}
+        local -r tmpdir=/tmp/${1}
 
         [ -f "${1}" ] && rm "${1}" >> /dev/null
         if [ -d "${1}" ]; then
@@ -162,48 +192,53 @@ function git_run() {
 
         mkdir -p "$(dirname ${tmpdir})"
 
-        git clone -q -o origin "${2}" "${tmpdir}" >> /dev/null || return 1
+        git clone -q -o origin "${local_remotes["origin"]}" "${tmpdir}" >> /dev/null || return 1
         mv "${tmpdir}" "${1}" >> /dev/null
 
         cd "${1}" >> /dev/null
 
         local -a local_branches=("$(git name-rev --name-only origin/HEAD)" ${3})
         for branch in "${local_branches[@]}"; do
-            git checkout -q "${branch}" >> /dev/null || return 1
+            git checkout -q "${branch}" &> /dev/null || return 1
             git checkout -q -f >> /dev/null || return 1
             git submodule -q init
+        done
+
+        for key in ${!local_remotes[@]}; do
+            git remote add -f "${key}" "${local_remotes[${key}]}" &> /dev/null
         done
 
         git checkout -q "${local_branches[0]}" >> /dev/null || return 1
         git submodule -q foreach --recursive "git checkout -q \"${local_branches[0]}\"" >> /dev/null || return 1
 
-        rmdir -p "$(dirname ${tmpdir})" >> /dev/null 2>&1 || true
+        rmdir -p "$(dirname ${tmpdir})" &> /dev/null || true
     else
         cd "${1}" >> /dev/null
         local -a local_branches=("$(git name-rev --name-only origin/HEAD)" ${3})
 
         git remote update -p origin >> /dev/null || return 1
 
-        git fetch -q origin >> /dev/null || return 1
-        git fetch -q -t origin >> /dev/null || return 1
+            git fetch -q "${key}" &> /dev/null || return 1
+            git fetch -q -t "${key}" &> /dev/null || return 1
+        done
 
         for branch in ${local_branches[@]}; do
             git stash save -q >> /dev/null || true
-            git checkout -q "${branch}" >> /dev/null || return 1
-            git rebase -n -q origin/"${branch}" >> /dev/null || return 1
-            git stash pop -q >> /dev/null || true
+            git checkout -q "${branch}" &> /dev/null || return 1
+            git rebase -n -q origin/"${branch}" &> /dev/null || return 1
+            git stash pop -q &> /dev/null || true
         done
 
         find "${1}" \( -iname '*.orig' -o -name '*.BASE.*' -o -name '*.LOCAL.*' -o -name '*.REMOTE.*' -o -name '*.BACKUP.*' \) -delete
 
         git checkout -q "${local_branches[0]}" >> /dev/null || return 1
 
-        while ! $(git-clean >> /dev/null); do true; done
+        while ! $(git_clean >> /dev/null); do true; done
     fi
 }
 #}}}
 
-# {{{ fcuntion svn_run
+# {{{ function svn_run
 function svn_run() {
     if [ ${#@} -ne 3 ]; then
         echo "wrong number of parameter"
@@ -218,7 +253,7 @@ function svn_run() {
     local -a local_branches=("master" ${3})
 
     if [ ! -d "${1}"/.git ]; then
-        local -r tmpdir=/tmp${1}
+        local -r tmpdir=/tmp/${1}
 
         [ -f "${1}" ] && rm "${1}" >> /dev/null
         if [ -d "${1}" ]; then
@@ -254,12 +289,7 @@ function svn_run() {
 
         find "${1}" \( -iname '*.orig' -o -name '*.BASE.*' -o -name '*.LOCAL.*' -o -name '*.REMOTE.*' -o -name '*.BACKUP.*' \) -delete
 
-        git reflog expire --all
-        git fsck --unreachable --full
-        git prune
-        git gc --aggressive --quiet
-        git repack -Adq
-        git prune-packed --quiet
+        while ! $(git_clean >> /dev/null); do true; done
 
         git checkout -q "${local_branches[0]}" >> /dev/null || return 1
     fi
@@ -273,21 +303,21 @@ mkdir -p "${repo_path}" >> /dev/null 2>&1 || (
 
 for key in $(echo -e "${!git_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " "); do
     declare repo=${repo_path}/${key}
-    echo -n "${repo}"
+    echo -n "${repo}..."
     git_run "${repo}" "${git_repos[${key}]}" "${branches[${key}]}" || exit 1
     unset repo
-    echo "... done"
+    echo " done!"
 done
 
 for key in $(echo -e "${!svn_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " "); do
     declare repo=${repo_path}/${key}
-    echo -n "${repo}"
+    echo -n "${repo}..."
     svn_run "${repo}" "${svn_repos[${key}]}" "${branches[${key}]}" || exit 1
     unset repo
-    echo "... done"
+    echo " done!"
 done
 
-echo "# CVS repositories:" ${#cvs_repos[@]}
+#echo "# CVS repositories:" ${#cvs_repos[@]}
 echo "# GIT reposituries:" ${#git_repos[@]}
 echo "# SVN repositories:" ${#svn_repos[@]}
 unset branches cvs_repos git_repos svn_repos
