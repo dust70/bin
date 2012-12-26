@@ -276,9 +276,9 @@ function svn_run() {
     else
         cd "${1}" >> /dev/null
 
-        git remote update -p >> /dev/null || return 1
+        git remote update -p &> /dev/null || return 1
 
-        git svn fetch -p -q >> /dev/null || return 1
+        git svn fetch -p -q &> /dev/null || return 1
 
         for branch in ${local_branches[@]}; do
             git stash save -q >> /dev/null || true
