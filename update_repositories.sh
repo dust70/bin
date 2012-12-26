@@ -107,7 +107,6 @@ git_repos["grml/grml-vpn"]="git://git.grml.org/grml-vpn.git"
 git_repos["grml/zsh-lovers"]="git://git.grml.org/zsh-lovers.git"
 
 git_repos["linux/git"]="git://git.kernel.org/pub/scm/git/git.git"
-git_repos["linux/kernel"]="git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
 git_repos["php/contao-docs"]="git://github.com/contao/docs.git"
