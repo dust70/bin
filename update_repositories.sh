@@ -288,7 +288,7 @@ function svn_run() {
             git stash save -q >> /dev/null || true
             git checkout -q "${branch}" >> /dev/null || return 1
             git svn rebase -n -q origin/"${branch}" >> /dev/null || return 1
-            git stash pop -q >> /dev/null || true
+            git stash pop -q &> /dev/null || true
         done
 
         find "${1}" \( -iname '*.orig' -o -name '*.BASE.*' -o -name '*.LOCAL.*' -o -name '*.REMOTE.*' -o -name '*.BACKUP.*' \) -delete
