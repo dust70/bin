@@ -8,7 +8,7 @@ export PATH="/bin:/usr/bin:/usr/local/bin:/opt/bin"
 # {{{ global variables to use
 declare -r oldpwd="${OLDPWD}"
 declare -r pwd="${PWD}"
-declare -r repo_path=~/repositories
+declare -r repo_path=${repo_path:-~/repositories}
 
 declare -A branches
 declare -A cvs_repos
@@ -97,8 +97,17 @@ git_repos["work/stauzebach/truckwash-remsfeld.de"]="git:work/stauzebach/truckwas
 git_repos["ajax/css-pie"]="git://github.com/lojjic/PIE.git"
 git_repos["ajax/jquery"]="git://github.com/jquery/jquery.git"
 
+git_repos["debian/kernel-handbook"]="git://anonscm.debian.org/kernel-handbook/kernel-handbook.git"
+
 git_repos["grml/grml-etc-core"]="git://git.grml.org/grml-etc-core.git"
+git_repos["grml/grml-gen-zshrefcard"]="git://git.grml.org/grml-gen-zshrefcard.git"
+git_repos["grml/grml-git-doc"]="git://git.grml.org/grml-git-doc.git"
+git_repos["grml/grml-kernel"]="git://git.grml.org/grml-kernel.git"
+git_repos["grml/grml-vpn"]="git://git.grml.org/grml-vpn.git"
 git_repos["grml/zsh-lovers"]="git://git.grml.org/zsh-lovers.git"
+
+git_repos["linux/git"]="git://git.kernel.org/pub/scm/git/git.git"
+git_repos["linux/kernel"]="git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
 git_repos["php/contao-docs"]="git://github.com/contao/docs.git"
@@ -108,6 +117,8 @@ git_repos["php/zend_framework-docs"]="git://github.com/zendframework/zf2-documen
 #}}}
 
 # {{{ subversion repositories
+svn_repos["debian/kernel"]="svn://svn.debian.org/kernel"
+
 svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.7"
 svn_repos["php/wordpress"]="http://core.svn.wordpress.org"
 #}}}
