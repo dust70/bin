@@ -231,6 +231,8 @@ function git_run() {
         for branch in ${local_branches[@]}; do
             git stash save -q >> /dev/null || true
             git checkout -q "${branch}" &> /dev/null || return 1
+            git reset --hard -q &> /dev/null || return 1
+            git merge -q origin/"${branch}" || true
             git rebase -n -q origin/"${branch}" &> /dev/null || return 1
             git stash pop -q &> /dev/null || true
         done
