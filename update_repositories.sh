@@ -23,19 +23,19 @@ trap "(cd ${oldpwd}; cd ${pwd}) >> /dev/null || return 1" EXIT KILL SIGINT SIGTE
 # {{{ repositories to check for
 # {{{ git repositories
 git_repos["dotfiles"]="git:dotfiles"
-git_repos["dotfiles/bash"]="git:dotfiles/bash"
+git_repos["dotfiles/bash"]="git:dotfiles/bash github github:dust70/bash"
 git_repos["dotfiles/config"]="git:dotfiles/config"
 git_repos["dotfiles/dotmail"]="git:dotfiles/dotmail"
-git_repos["dotfiles/eclipse"]="git:dotfiles/eclipse"
-git_repos["dotfiles/git"]="git:dotfiles/git"
+git_repos["dotfiles/eclipse"]="git:dotfiles/eclipse github github:dust70/eclipse"
+git_repos["dotfiles/git"]="git:dotfiles/git github github:dust70/eclipse"
 git_repos["dotfiles/gnupg"]="git:dotfiles/gnupg"
-git_repos["dotfiles/local"]="git:dotfiles/local"
+git_repos["dotfiles/local"]="git:dotfiles/local github github:dust70/local"
 git_repos["dotfiles/mutt"]="git:dotfiles/mutt"
-git_repos["dotfiles/shell"]="git:dotfiles/shell"
+git_repos["dotfiles/shell"]="git:dotfiles/shell github github:dust70/shell"
 git_repos["dotfiles/Skype"]="git:dotfiles/Skype"
 git_repos["dotfiles/ssh"]="git:dotfiles/ssh"
-git_repos["dotfiles/vim"]="git:dotfiles/vim"
-git_repos["dotfiles/zsh"]="git:dotfiles/zsh"
+git_repos["dotfiles/vim"]="git:dotfiles/vim github github:dust70/vim"
+git_repos["dotfiles/zsh"]="git:dotfiles/zsh github github:dust70/zsh"
 
 git_repos["dotfiles/git/GitIgnoreRepo"]="git://github.com/github/gitignore.git"
 
@@ -72,7 +72,7 @@ git_repos["dotfiles/vim/bundle/VCSCommand"]="git://repo.or.cz/vcscommand.git"
 git_repos["dotfiles/vim/bundle/VimPager"]="git://github.com/rkitover/vimpager.git"
 git_repos["dotfiles/vim/bundle/YankRing"]="git://github.com/vim-scripts/YankRing.vim.git"
 
-git_repos["bin"]="git:bin"
+git_repos["bin"]="git:bin github github:dust70/bin"
 
 git_repos["etc"]="git:etc"
 
@@ -91,7 +91,9 @@ git_repos["work/self/tectum.de"]="git:work/self/tectum.de"
 
 git_repos["work/stauzebach/autowaschpark-marburg.de"]="git:work/stauzebach/autowaschpark-marburg.de"
 git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
+git_repos["work/stauzebach/etc"]="git:work/stauzebach/etc"
 git_repos["work/stauzebach/rechnungssystem"]="git:work/stauzebach/rechnungssystem"
+git_repos["work/stauzebach/root"]="git:work/stauzebach/root"
 git_repos["work/stauzebach/truckwash-remsfeld.de"]="git:work/stauzebach/truckwash-remsfeld.de"
 
 git_repos["ajax/css-pie"]="git://github.com/lojjic/PIE.git"
@@ -130,7 +132,7 @@ branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
 
-branches["etc"]="amalthea desktop debian/desktop ganymed himalia io"
+branches["etc"]="amalthea debian/desktop desktop ganymed himalia io pasiphae server"
 
 branches["php/contao"]="develop lts"
 
@@ -187,6 +189,7 @@ function git_run() {
         local -r tmpdir=/tmp/${1}
 
         [ -f "${1}" ] && rm "${1}" >> /dev/null
+
         if [ -d "${1}" ]; then
             rmdir "${1}" >> /dev/null || return 1
         fi
@@ -245,7 +248,7 @@ function git_run() {
 
 # {{{ function svn_run
 function svn_run() {
-    if [ ${#@} -ne 3 ]; then
+    if [ ${#@} -ne 2 ]; then
         echo "wrong number of parameter"
         return 1
     fi
@@ -255,48 +258,28 @@ function svn_run() {
         return 1
     )
 
-    local -a local_branches=("master" ${3})
-
-    if [ ! -d "${1}"/.git ]; then
+    if [ ! -d "${1}"/.svn ]; then
         local -r tmpdir=/tmp/${1}
 
         [ -f "${1}" ] && rm "${1}" >> /dev/null
+
         if [ -d "${1}" ]; then
             rmdir "${1}" >> /dev/null || return 1
         fi
 
         mkdir -p "$(dirname ${tmpdir})"
 
-        git svn clone -q "${2}" "${tmpdir}" >> /dev/null || return 1
+        svn checkout "${2}" "${tmpdir}" >> /dev/null || return 1
+
         mv "${tmpdir}" "${1}" >> /dev/null
 
         cd "${1}" >> /dev/null
-
-        for branch in "${local_branches[@]}"; do
-            git checkout -q "${branch}" >> /dev/null || return 1
-            git checkout -q -f >> /dev/null || return 1
-        done
 
         rmdir -p "$(dirname ${tmpdir})" >> /dev/null 2>&1 || true
     else
         cd "${1}" >> /dev/null
 
-        git remote update -p &> /dev/null || return 1
-
-        git svn fetch -p -q &> /dev/null || return 1
-
-        for branch in ${local_branches[@]}; do
-            git stash save -q >> /dev/null || true
-            git checkout -q "${branch}" >> /dev/null || return 1
-            git svn rebase -n -q origin/"${branch}" >> /dev/null || return 1
-            git stash pop -q &> /dev/null || true
-        done
-
-        find "${1}" \( -iname '*.orig' -o -name '*.BASE.*' -o -name '*.LOCAL.*' -o -name '*.REMOTE.*' -o -name '*.BACKUP.*' \) -delete
-
-        while ! $(git_clean >> /dev/null); do true; done
-
-        git checkout -q "${local_branches[0]}" >> /dev/null || return 1
+        svn update --force &> /dev/null || return 1
     fi
 }
 #}}}
@@ -317,7 +300,7 @@ done
 for key in $(echo -e "${!svn_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " "); do
     declare repo=${repo_path}/${key}
     echo -n "${repo}..."
-    svn_run "${repo}" "${svn_repos[${key}]}" "${branches[${key}]}" || exit 1
+    svn_run "${repo}" "${svn_repos[${key}]}" || exit 1
     unset repo
     echo " done!"
 done
