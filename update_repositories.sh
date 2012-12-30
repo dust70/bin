@@ -109,6 +109,7 @@ git_repos["grml/zsh-lovers"]="git://git.grml.org/zsh-lovers.git"
 git_repos["linux/git"]="git://git.kernel.org/pub/scm/git/git.git"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
+git_repos["php/contao-check"]="git://github.com/contao/check.git"
 git_repos["php/contao-docs"]="git://github.com/contao/docs.git"
 
 git_repos["php/zend_framework"]="git://github.com/zendframework/zf2.git"
