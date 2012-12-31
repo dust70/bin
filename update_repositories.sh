@@ -39,6 +39,8 @@ git_repos["dotfiles/zsh"]="git:dotfiles/zsh github github:dust70/zsh"
 
 git_repos["dotfiles/git/GitIgnoreRepo"]="git://github.com/github/gitignore.git"
 
+git_repos["dotfiles/vim/PHP-CTags"]="git://github.com/techlivezheng/phpctags.git"
+
 git_repos["dotfiles/vim/bundle/Align"]="git://github.com/tsaleh/vim-align.git"
 git_repos["dotfiles/vim/bundle/AutoClose"]="git://github.com/Townk/vim-autoclose.git"
 git_repos["dotfiles/vim/bundle/Calendar"]="git://github.com/mattn/calendar-vim.git"
@@ -67,6 +69,7 @@ git_repos["dotfiles/vim/bundle/Supertab"]="git://github.com/ervandew/supertab.gi
 git_repos["dotfiles/vim/bundle/Surround"]="git://github.com/tpope/vim-surround.git"
 git_repos["dotfiles/vim/bundle/Syntastic"]="git://github.com/scrooloose/syntastic.git"
 git_repos["dotfiles/vim/bundle/Tagbar"]="git://github.com/majutsushi/tagbar.git"
+git_repos["dotfiles/vim/bundle/Tagbar-PHP-CTags"]="git://github.com/techlivezheng/tagbar-phpctags.git"
 git_repos["dotfiles/vim/bundle/UnImpaired"]="git://github.com/tpope/vim-unimpaired.git"
 git_repos["dotfiles/vim/bundle/VCSCommand"]="git://repo.or.cz/vcscommand.git"
 git_repos["dotfiles/vim/bundle/VimPager"]="git://github.com/rkitover/vimpager.git"
