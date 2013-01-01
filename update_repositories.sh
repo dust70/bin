@@ -238,6 +238,8 @@ function git_run() {
             git merge -q origin/"${branch}" &>/dev/null || true
             git rebase -n -q origin/"${branch}" &> /dev/null || return 1
             git stash pop -q &> /dev/null || true
+
+            git submodule -q init
         done
 
         find "${1}" \( -iname '*.orig' -o -name '*.BASE.*' -o -name '*.LOCAL.*' -o -name '*.REMOTE.*' -o -name '*.BACKUP.*' \) -delete
