@@ -22,7 +22,7 @@ trap "(cd ${oldpwd}; cd ${pwd}) >> /dev/null || return 1" EXIT KILL SIGINT SIGTE
 
 # {{{ repositories to check for
 # {{{ git repositories
-git_repos["dotfiles"]="git:dotfiles"
+git_repos["dotfiles"]="git:dotfiles public git:dotfiles/dotfiles_pub"
 git_repos["dotfiles/bash"]="git:dotfiles/bash github github:dust70/bash"
 git_repos["dotfiles/config"]="git:dotfiles/config"
 git_repos["dotfiles/dotmail"]="git:dotfiles/dotmail"
