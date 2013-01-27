@@ -109,7 +109,8 @@ git_repos["grml/grml-kernel"]="git://git.grml.org/grml-kernel.git"
 git_repos["grml/grml-vpn"]="git://git.grml.org/grml-vpn.git"
 git_repos["grml/zsh-lovers"]="git://git.grml.org/zsh-lovers.git"
 
-git_repos["linux/git"]="git://git.kernel.org/pub/scm/git/git.git"
+git_repos["linux/linux-stable"]="git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git"
+git_repos["linux/linux-torvalds"]="git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
 git_repos["php/contao-check"]="git://github.com/contao/check.git"
@@ -117,6 +118,8 @@ git_repos["php/contao-docs"]="git://github.com/contao/docs.git"
 
 git_repos["php/zend_framework"]="git://github.com/zendframework/zf2.git"
 git_repos["php/zend_framework-docs"]="git://github.com/zendframework/zf2-documentation.git"
+
+git_repos["software/git"]="git://git.kernel.org/pub/scm/git/git.git"
 #}}}
 
 # {{{ subversion repositories
