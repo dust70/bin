@@ -61,6 +61,7 @@ git_repos["dotfiles/vim/bundle/PDV"]="git://github.com/vim-scripts/PDV--phpDocum
 git_repos["dotfiles/vim/bundle/PHP-Dictionary"]="git://github.com/vim-scripts/PHP-dictionary.git"
 git_repos["dotfiles/vim/bundle/PythonMode"]="git://github.com/klen/python-mode.git"
 git_repos["dotfiles/vim/bundle/RagTag"]="git://github.com/tpope/vim-ragtag.git"
+git_repos["dotfiles/vim/bundle/Screen"]="git://github.com/ervandew/screen.git"
 git_repos["dotfiles/vim/bundle/SecureModelines"]="git://github.com/ciaranm/securemodelines.git"
 git_repos["dotfiles/vim/bundle/Session"]="git://github.com/xolox/vim-session.git"
 git_repos["dotfiles/vim/bundle/ShowMarks"]="git://github.com/vim-scripts/ShowMarks.git"
@@ -107,8 +108,10 @@ git_repos["grml/grml-kernel"]="git://git.grml.org/grml-kernel.git"
 git_repos["grml/grml-vpn"]="git://git.grml.org/grml-vpn.git"
 git_repos["grml/zsh-lovers"]="git://git.grml.org/zsh-lovers.git"
 
-git_repos["linux/linux-stable"]="git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git"
-git_repos["linux/linux-torvalds"]="git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git"
+# die beiden hier sind zu gross, die werden nur auf bestimmten hosts geladen und
+# manuell uptodate gehalten
+#git_repos["linux/linux-stable"]="git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git"
+#git_repos["linux/linux-torvalds"]="git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
 git_repos["php/contao-check"]="git://github.com/contao/check.git"
