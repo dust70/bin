@@ -124,7 +124,7 @@ git_repos["software/git"]="git://git.kernel.org/pub/scm/git/git.git"
 #}}}
 
 # {{{ subversion repositories
-svn_repos["debian/kernel"]="svn://svn.debian.org/kernel"
+svn_repos["debian/kernel"]="svn://svn.debian.org/svn/kernel/dists/trunk/linux/debian"
 
 svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.7"
 svn_repos["php/wordpress"]="http://core.svn.wordpress.org"
