@@ -106,6 +106,7 @@ git_repos["grml/grml-gen-zshrefcard"]="git://git.grml.org/grml-gen-zshrefcard.gi
 git_repos["grml/grml-git-doc"]="git://git.grml.org/grml-git-doc.git"
 git_repos["grml/grml-kernel"]="git://git.grml.org/grml-kernel.git"
 git_repos["grml/grml-vpn"]="git://git.grml.org/grml-vpn.git"
+git_repos["grml/grml2usb"]="git://github.com/grml/grml2usb.git"
 git_repos["grml/zsh-lovers"]="git://git.grml.org/zsh-lovers.git"
 
 # die beiden hier sind zu gross, die werden nur auf bestimmten hosts geladen und
