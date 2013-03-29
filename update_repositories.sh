@@ -142,7 +142,7 @@ branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
 
-branches["etc"]="amalthea desktop ganymed himalia io pasiphae server"
+branches["etc"]="amalthea desktop ganymed himalia pasiphae server"
 
 branches["php/contao"]="develop lts"
 
