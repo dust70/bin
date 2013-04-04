@@ -94,6 +94,7 @@ git_repos["latex/invoice"]="git:latex/invoice"
 git_repos["pass"]="git:pass"
 
 git_repos["work/self/tectum.de"]="git:work/self/tectum.de"
+git_repos["work/self/urnensymbole.de"]="git:work/self/urnensymbole.de"
 
 git_repos["work/stauzebach/autowaschpark-marburg.de"]="git:work/stauzebach/autowaschpark-marburg.de"
 git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
