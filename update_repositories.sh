@@ -74,6 +74,7 @@ git_repos["dotfiles/vim/bundle/Surround"]="git://github.com/tpope/vim-surround.g
 git_repos["dotfiles/vim/bundle/Syntastic"]="git://github.com/scrooloose/syntastic.git"
 git_repos["dotfiles/vim/bundle/Tagbar"]="git://github.com/majutsushi/tagbar.git"
 git_repos["dotfiles/vim/bundle/Tagbar-PHP-CTags"]="git://github.com/techlivezheng/tagbar-phpctags.git"
+git_repos["dotfiles/vim/bundle/TBone"]="git://github.com/tpope/vim-tbone.git"
 git_repos["dotfiles/vim/bundle/UnImpaired"]="git://github.com/tpope/vim-unimpaired.git"
 git_repos["dotfiles/vim/bundle/VCSCommand"]="git://repo.or.cz/vcscommand.git"
 git_repos["dotfiles/vim/bundle/VimPager"]="git://github.com/rkitover/vimpager.git"
