@@ -43,6 +43,7 @@ git_repos["dotfiles/vim/PHP-CTags"]="git://github.com/techlivezheng/phpctags.git
 
 git_repos["dotfiles/vim/bundle/Align"]="git://github.com/tsaleh/vim-align.git"
 git_repos["dotfiles/vim/bundle/AutoClose"]="git://github.com/Townk/vim-autoclose.git"
+git_repos["dotfiles/vim/bundle/AutoCloseTag"]="git://github.com/vim-scripts/HTML-AutoCloseTag.git"
 git_repos["dotfiles/vim/bundle/Bash-Support"]="git://github.com/vim-scripts/bash-support.vim.git"
 git_repos["dotfiles/vim/bundle/Calendar"]="git://github.com/mattn/calendar-vim.git"
 git_repos["dotfiles/vim/bundle/ColorSchemes"]="git://github.com/flazz/vim-colorschemes.git"
