@@ -64,6 +64,7 @@ git_repos["dotfiles/vim/bundle/PathOGen"]="git://github.com/tpope/vim-pathogen.g
 git_repos["dotfiles/vim/bundle/PDV"]="git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git"
 git_repos["dotfiles/vim/bundle/PHP-Complete"]="git://github.com/shawncplus/phpcomplete.vim.git"
 git_repos["dotfiles/vim/bundle/PHP-Dictionary"]="git://github.com/vim-scripts/PHP-dictionary.git"
+git_repos["dotfiles/vim/bundle/Project"]="git://github.com/amiorin/vim-project.git"
 git_repos["dotfiles/vim/bundle/PythonMode"]="git://github.com/klen/python-mode.git"
 git_repos["dotfiles/vim/bundle/RagTag"]="git://github.com/tpope/vim-ragtag.git"
 git_repos["dotfiles/vim/bundle/Screen"]="git://github.com/ervandew/screen.git"
