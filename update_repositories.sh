@@ -168,6 +168,8 @@ branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
 
+branches["dotfiles/vim/bundle/PythonMode"]="master"
+
 branches["etc"]="amalthea desktop ganymed himalia pasiphae server"
 
 branches["php/contao"]="develop lts"
@@ -261,7 +263,7 @@ function git_run() {
 
             git remote update -p "${key}" &> /dev/null || return 1
             git remote prune "${key}" &> /dev/null || return 1
-            
+
             git fetch -q "${key}" &> /dev/null || return 1
             git fetch -q -t "${key}" &> /dev/null || return 1
         done
