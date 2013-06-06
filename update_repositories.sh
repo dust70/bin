@@ -22,6 +22,8 @@ trap "(cd ${oldpwd}; cd ${pwd}) >> /dev/null || return 1" EXIT KILL SIGINT SIGTE
 
 # {{{ repositories to check for
 # {{{ git repositories
+git_repos["Documents"]="git:Documents"
+
 git_repos["dotfiles"]="git:dotfiles"
 git_repos["dotfiles/bash"]="git:dotfiles/bash github github:dust70/bash"
 git_repos["dotfiles/config"]="git:dotfiles/config"
@@ -114,9 +116,7 @@ git_repos["pass"]="git:pass"
 
 git_repos["work/self/docs"]="git:work/self/docs"
 git_repos["work/self/scripts"]="git:work/self/scripts"
-git_repos["work/self/tectum.de"]="git:work/self/tectum.de"
 git_repos["work/self/todo"]="git:work/self/todo"
-git_repos["work/self/urnensymbole.de"]="git:work/self/urnensymbole.de"
 
 git_repos["work/stauzebach/autowaschpark-marburg.de"]="git:work/stauzebach/autowaschpark-marburg.de"
 git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
@@ -163,6 +163,8 @@ svn_repos["php/wordpress"]="http://core.svn.wordpress.org"
 #}}}
 
 # {{{ branches to use
+branches["Documents"]="desktop"
+
 branches["dotfiles"]="desktop himalia pasiphae"
 branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
