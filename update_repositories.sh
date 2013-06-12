@@ -22,8 +22,6 @@ trap "(cd ${oldpwd}; cd ${pwd}) >> /dev/null || return 1" EXIT KILL SIGINT SIGTE
 
 # {{{ repositories to check for
 # {{{ git repositories
-git_repos["Documents"]="git:Documents"
-
 git_repos["dotfiles"]="git:dotfiles"
 git_repos["dotfiles/bash"]="git:dotfiles/bash github github:dust70/bash"
 git_repos["dotfiles/config"]="git:dotfiles/config"
@@ -51,6 +49,7 @@ git_repos["dotfiles/vim/bundle/Calendar"]="git://github.com/mattn/calendar-vim.g
 git_repos["dotfiles/vim/bundle/ColorSchemes"]="git://github.com/flazz/vim-colorschemes.git"
 git_repos["dotfiles/vim/bundle/Conque"]="git://github.com/vim-scripts/Conque-Shell.git"
 git_repos["dotfiles/vim/bundle/CSV"]="git://github.com/chrisbra/csv.vim.git"
+git_repos["dotfiles/vim/bundle/CtrlP"]="git://github.com/dust70/ctrlp.vim.git"
 git_repos["dotfiles/vim/bundle/DBExt"]="git://github.com/vim-scripts/dbext.vim.git"
 git_repos["dotfiles/vim/bundle/Detailed"]="git://github.com/rking/vim-detailed.git"
 git_repos["dotfiles/vim/bundle/EnhancedCommentify"]="git://github.com/hrp/EnhancedCommentify.git"
@@ -64,9 +63,9 @@ git_repos["dotfiles/vim/bundle/GnuPG"]="git://gitorious.org/vim-gnupg/vim-gnupg.
 git_repos["dotfiles/vim/bundle/GoogleVim"]="git://github.com/vim-scripts/google.vim.git"
 git_repos["dotfiles/vim/bundle/HTML5"]="git://github.com/othree/html5.vim.git"
 git_repos["dotfiles/vim/bundle/LaTeX"]="git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex"
-git_repos["dotfiles/vim/bundle/MiniBufExpl"]="git://github.com/fholgado/minibufexpl.vim.git"
 git_repos["dotfiles/vim/bundle/Neocomplcache"]="git://github.com/Shougo/neocomplcache.vim.git"
 git_repos["dotfiles/vim/bundle/NerdTree"]="git://github.com/scrooloose/nerdtree.git"
+git_repos["dotfiles/vim/bundle/Obsession"]="git://github.com/tpope/vim-obsession.git"
 git_repos["dotfiles/vim/bundle/Outliner"]="git://github.com/vimoutliner/vimoutliner.git"
 git_repos["dotfiles/vim/bundle/PathOGen"]="git://github.com/tpope/vim-pathogen.git"
 git_repos["dotfiles/vim/bundle/PDV"]="git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git"
@@ -78,7 +77,6 @@ git_repos["dotfiles/vim/bundle/PythonMode"]="git://github.com/klen/python-mode.g
 git_repos["dotfiles/vim/bundle/RagTag"]="git://github.com/tpope/vim-ragtag.git"
 git_repos["dotfiles/vim/bundle/Screen"]="git://github.com/ervandew/screen.git"
 git_repos["dotfiles/vim/bundle/SecureModelines"]="git://github.com/ciaranm/securemodelines.git"
-git_repos["dotfiles/vim/bundle/Session"]="git://github.com/xolox/vim-session.git"
 git_repos["dotfiles/vim/bundle/ShowMarks"]="git://github.com/vim-scripts/ShowMarks.git"
 git_repos["dotfiles/vim/bundle/SingleCompile"]="git://github.com/xuhdev/SingleCompile.git"
 git_repos["dotfiles/vim/bundle/Smarty"]="git://github.com/vim-scripts/smarty-syntax.git"
@@ -125,8 +123,9 @@ git_repos["work/stauzebach/truckwash-remsfeld.de"]="git:work/stauzebach/truckwas
 
 git_repos["ajax/css-pie"]="git://github.com/lojjic/PIE.git"
 git_repos["ajax/jquery"]="git://github.com/jquery/jquery.git"
-
-git_repos["debian/kernel-handbook"]="git://anonscm.debian.org/kernel-handbook/kernel-handbook.git"
+git_repos["ajax/mootools-core"]="git://github.com/mootools/mootools-core.git"
+git_repos["ajax/mootools-more"]="git://github.com/mootools/mootools-more.git"
+git_repos["ajax/node.js"]="git://github.com/joyent/node.git"
 
 git_repos["grml/grml-etc-core"]="git://git.grml.org/grml-etc-core.git"
 git_repos["grml/grml-gen-zshrefcard"]="git://git.grml.org/grml-gen-zshrefcard.git"
@@ -147,6 +146,8 @@ git_repos["php/contao-docs"]="git://github.com/contao/docs.git"
 
 git_repos["php/shopware"]="git://github.com/ShopwareAG/shopware-4.git"
 
+git_repos["php/tcpdf"]="git://git.code.sf.net/p/tcpdf/code"
+
 git_repos["php/zend_framework"]="git://github.com/zendframework/zf2.git"
 git_repos["php/zend_framework-docs"]="git://github.com/zendframework/zf2-documentation.git"
 
@@ -155,8 +156,6 @@ git_repos["software/sysadmin-utils"]="git://github.com/skx/sysadmin-util.git"
 #}}}
 
 # {{{ subversion repositories
-svn_repos["debian/kernel"]="svn://svn.debian.org/svn/kernel/dists/trunk/linux/debian"
-
 svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.7"
 svn_repos["php/wordpress"]="http://core.svn.wordpress.org"
 #}}}
