@@ -116,10 +116,8 @@ git_repos["work/self/docs"]="git:work/self/docs"
 git_repos["work/self/scripts"]="git:work/self/scripts"
 git_repos["work/self/todo"]="git:work/self/todo"
 
-git_repos["work/stauzebach/autowaschpark-marburg.de"]="git:work/stauzebach/autowaschpark-marburg.de"
 git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
 git_repos["work/stauzebach/rechnungssystem"]="git:work/stauzebach/rechnungssystem"
-git_repos["work/stauzebach/truckwash-remsfeld.de"]="git:work/stauzebach/truckwash-remsfeld.de"
 
 git_repos["ajax/css-pie"]="git://github.com/lojjic/PIE.git"
 git_repos["ajax/jquery"]="git://github.com/jquery/jquery.git"
