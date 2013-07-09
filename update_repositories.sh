@@ -133,6 +133,9 @@ git_repos["grml/grml-vpn"]="git://git.grml.org/grml-vpn.git"
 git_repos["grml/grml2usb"]="git://github.com/grml/grml2usb.git"
 git_repos["grml/zsh-lovers"]="git://git.grml.org/zsh-lovers.git"
 
+git_repos["gentoo/catalyst"]="git:gentoo/catalyst"
+git_repos["gentoo/releng"]="git://git.overlays.gentoo.org/proj/releng.git"
+
 # die beiden hier sind zu gross, die werden nur auf bestimmten hosts geladen und
 # manuell uptodate gehalten
 #git_repos["linux/linux-stable"]="git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git"
