@@ -153,7 +153,7 @@ svn_repos["php/wordpress"]="http://core.svn.wordpress.org"
 # {{{ branches to use
 branches["Documents"]="desktop"
 
-branches["dotfiles"]="desktop himalia pasiphae"
+branches["dotfiles"]="desktop himalia lysithea pasiphae"
 branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
