@@ -3,13 +3,13 @@ PATH=/bin:/usr/bin
 DIR=${1:-~/Maildir}
 
 for d in "${DIR}"/*; do
-    [ "${d}" = "${DIR}/INBOX" ]                 && continue
-    [ "${d}" = "${DIR}/INBOX.drafts" ]          && continue
-    [ "${d}" = "${DIR}/INBOX.junk" ]            && continue
-    [ "${d}" = "${DIR}/INBOX.sent" ]            && continue
-    [ "${d}" = "${DIR}/INBOX.templates" ]       && continue
-    [ "${d}" = "${DIR}/INBOX.trash" ]           && continue
-    [ $(find "${d}" -type f | wc -l) -eq 0 ]    && \
+    [ "${d}" = "${DIR}/INBOX" ]              && continue
+    [ "${d}" = "${DIR}/Drafts" ]             && continue
+    [ "${d}" = "${DIR}/Junk" ]               && continue
+    [ "${d}" = "${DIR}/Sent" ]               && continue
+    [ "${d}" = "${DIR}/Templates" ]          && continue
+    [ "${d}" = "${DIR}/Trash" ]              && continue
+    [ $(find "${d}" -type f | wc -l) -eq 0 ] && \
         rmdir -v "${d}"/cur "${d}"/new "${d}"/tmp "${d}"
 done
 
