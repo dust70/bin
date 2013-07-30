@@ -67,6 +67,7 @@ git_repos["dotfiles/vim/bundle/Outliner"]="git://github.com/vimoutliner/vimoutli
 git_repos["dotfiles/vim/bundle/PathOGen"]="git://github.com/tpope/vim-pathogen.git"
 git_repos["dotfiles/vim/bundle/PHP-Complete"]="git://github.com/shawncplus/phpcomplete.vim.git"
 git_repos["dotfiles/vim/bundle/PHP-Dictionary"]="git://github.com/vim-scripts/PHP-dictionary.git"
+git_repos["dotfiles/vim/bundle/PHP-Getter-Setter"]="git://github.com/docteurklein/php-getter-setter.vim.git"
 git_repos["dotfiles/vim/bundle/PHPDoc"]="git://github.com/stephpy/vim-phpdoc.git"
 git_repos["dotfiles/vim/bundle/SecureModelines"]="git://github.com/ciaranm/securemodelines.git"
 git_repos["dotfiles/vim/bundle/ShowMarks"]="git://github.com/vim-scripts/ShowMarks.git"
