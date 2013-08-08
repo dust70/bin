@@ -48,6 +48,7 @@ git_repos["dotfiles/vim/bundle/Calendar"]="git://github.com/mattn/calendar-vim.g
 git_repos["dotfiles/vim/bundle/ColorSchemes"]="git://github.com/flazz/vim-colorschemes.git"
 git_repos["dotfiles/vim/bundle/ColorV"]="git://github.com/Rykka/colorv.vim.git"
 git_repos["dotfiles/vim/bundle/Conque"]="git://github.com/vim-scripts/Conque-Shell.git"
+git_repos["dotfiles/vim/bundle/CSS-Syntax"]="git://github.com/ChrisYip/Better-CSS-Syntax-for-Vim.git"
 git_repos["dotfiles/vim/bundle/CSV"]="git://github.com/chrisbra/csv.vim.git"
 git_repos["dotfiles/vim/bundle/CtrlP"]="git://github.com/dust70/ctrlp.vim.git"
 git_repos["dotfiles/vim/bundle/DBExt"]="git://github.com/vim-scripts/dbext.vim.git"
@@ -85,6 +86,7 @@ git_repos["dotfiles/vim/bundle/TSkeleton"]="git://github.com/tomtom/tskeleton_vi
 git_repos["dotfiles/vim/bundle/UnImpaired"]="git://github.com/tpope/vim-unimpaired.git"
 git_repos["dotfiles/vim/bundle/VimPager"]="git://github.com/rkitover/vimpager.git"
 git_repos["dotfiles/vim/bundle/YankRing"]="git://github.com/vim-scripts/YankRing.vim.git"
+git_repos["dotfiles/vim/undle/PHP-Annotations-Syntax"]="git://github.com/vim-scripts/php-annotations-syntax.git"
 
 git_repos["bin"]="git:bin github github:dust70/bin"
 
