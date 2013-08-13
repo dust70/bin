@@ -106,7 +106,6 @@ git_repos["work/self/scripts"]="git:work/self/scripts"
 git_repos["work/self/todo"]="git:work/self/todo"
 
 git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
-git_repos["work/stauzebach/rechnungssystem"]="git:work/stauzebach/rechnungssystem"
 
 git_repos["ajax/css-pie"]="git://github.com/lojjic/PIE.git"
 git_repos["ajax/jquery"]="git://github.com/jquery/jquery.git"
