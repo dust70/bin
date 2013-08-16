@@ -66,6 +66,7 @@ git_repos["dotfiles/vim/bundle/NerdTree"]="git://github.com/scrooloose/nerdtree.
 git_repos["dotfiles/vim/bundle/Obsession"]="git://github.com/tpope/vim-obsession.git"
 git_repos["dotfiles/vim/bundle/Outliner"]="git://github.com/vimoutliner/vimoutliner.git"
 git_repos["dotfiles/vim/bundle/PathOGen"]="git://github.com/tpope/vim-pathogen.git"
+git_repos["dotfiles/vim/bundle/PHP-Annotations-Syntax"]="git://github.com/vim-scripts/php-annotations-syntax.git"
 git_repos["dotfiles/vim/bundle/PHP-Complete"]="git://github.com/shawncplus/phpcomplete.vim.git"
 git_repos["dotfiles/vim/bundle/PHP-Dictionary"]="git://github.com/vim-scripts/PHP-dictionary.git"
 git_repos["dotfiles/vim/bundle/PHP-Getter-Setter"]="git://github.com/docteurklein/php-getter-setter.vim.git"
@@ -86,7 +87,6 @@ git_repos["dotfiles/vim/bundle/TSkeleton"]="git://github.com/tomtom/tskeleton_vi
 git_repos["dotfiles/vim/bundle/UnImpaired"]="git://github.com/tpope/vim-unimpaired.git"
 git_repos["dotfiles/vim/bundle/VimPager"]="git://github.com/rkitover/vimpager.git"
 git_repos["dotfiles/vim/bundle/YankRing"]="git://github.com/vim-scripts/YankRing.vim.git"
-git_repos["dotfiles/vim/undle/PHP-Annotations-Syntax"]="git://github.com/vim-scripts/php-annotations-syntax.git"
 
 git_repos["bin"]="git:bin github github:dust70/bin"
 
@@ -96,7 +96,6 @@ git_repos["gitolite-admin"]="git:gitolite-admin"
 
 git_repos["html/www.rene-six.de"]="git:html/www.rene-six.de"
 
-git_repos["latex/application"]="git:latex/application"
 git_repos["latex/invoice"]="git:latex/invoice"
 
 git_repos["pass"]="git:pass"
@@ -107,50 +106,13 @@ git_repos["work/self/todo"]="git:work/self/todo"
 
 git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
 
-git_repos["ajax/css-pie"]="git://github.com/lojjic/PIE.git"
-git_repos["ajax/jquery"]="git://github.com/jquery/jquery.git"
-git_repos["ajax/mootools-core"]="git://github.com/mootools/mootools-core.git"
-git_repos["ajax/mootools-more"]="git://github.com/mootools/mootools-more.git"
-git_repos["ajax/node.js"]="git://github.com/joyent/node.git"
-
-git_repos["grml/grml-etc-core"]="git://git.grml.org/grml-etc-core.git"
-git_repos["grml/grml-gen-zshrefcard"]="git://git.grml.org/grml-gen-zshrefcard.git"
-git_repos["grml/grml-git-doc"]="git://git.grml.org/grml-git-doc.git"
-git_repos["grml/grml-kernel"]="git://git.grml.org/grml-kernel.git"
-git_repos["grml/grml-vpn"]="git://git.grml.org/grml-vpn.git"
-git_repos["grml/grml2usb"]="git://github.com/grml/grml2usb.git"
-git_repos["grml/zsh-lovers"]="git://git.grml.org/zsh-lovers.git"
-
 git_repos["gentoo/catalyst"]="git:gentoo/catalyst"
-git_repos["gentoo/releng"]="git://git.overlays.gentoo.org/proj/releng.git"
-
-# die beiden hier sind zu gross, die werden nur auf bestimmten hosts geladen und
-# manuell uptodate gehalten
-#git_repos["linux/linux-stable"]="git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git"
-#git_repos["linux/linux-torvalds"]="git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
 git_repos["php/contao-check"]="git://github.com/contao/check.git"
-git_repos["php/contao-docs"]="git://github.com/contao/docs.git"
-
-git_repos["php/phpmyadmin"]="git://github.com/phpmyadmin/phpmyadmin.git"
-
-git_repos["php/shopware"]="git://github.com/ShopwareAG/shopware-4.git"
-
-git_repos["php/tcpdf"]="git://git.code.sf.net/p/tcpdf/code"
-
-git_repos["php/zend_framework"]="git://github.com/zendframework/zf2.git"
-git_repos["php/zend_framework-docs"]="git://github.com/zendframework/zf2-documentation.git"
-
-git_repos["software/git"]="git://git.kernel.org/pub/scm/git/git.git"
-git_repos["software/sysadmin-utils"]="git://github.com/skx/sysadmin-util.git"
 #}}}
 
 # {{{ subversion repositories
-# svn_repos["debian/kernel"]="svn://svn.debian.org/svn/kernel/dists/trunk/linux/debian"
-
-svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.7"
-svn_repos["php/wordpress"]="http://core.svn.wordpress.org"
 #}}}
 #}}}
 
