@@ -282,17 +282,6 @@ function svn_run() {
 }
 #}}}
 
-# function copy_run
-function copy_run() {
-    [[ -d "${repo_path}/src" ]] || mkdir -p "${repo_path}/src"
-    for i in /usr/src/*
-    do
-        [[ -d "${i}" ]]                                 || continue
-        [[ -d "${repo_path}/src/${i//\/usr\/src\//}" ]] && continue
-        cp -rs "${i}" "${repo_path}/src/${i//\/usr\/src\//}"
-    done
-}
-
 mkdir -p "${repo_path}" >> /dev/null 2>&1 || (
     echo "can't create directory" ${repo_path}
     return 1
@@ -313,8 +302,6 @@ for key in $(echo -e "${!svn_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " "); 
     unset repo
     echo " done!"
 done
-
-copy_run
 
 #echo "# CVS repositories:" ${#cvs_repos[@]}
 echo "# GIT reposituries:" ${#git_repos[@]}
