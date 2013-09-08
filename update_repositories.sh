@@ -51,6 +51,7 @@ git_repos["dotfiles/vim/bundle/Conque"]="git://github.com/vim-scripts/Conque-She
 git_repos["dotfiles/vim/bundle/CSS-Syntax"]="git://github.com/ChrisYip/Better-CSS-Syntax-for-Vim.git"
 git_repos["dotfiles/vim/bundle/CSV"]="git://github.com/chrisbra/csv.vim.git"
 git_repos["dotfiles/vim/bundle/CtrlP"]="git://github.com/dust70/ctrlp.vim.git"
+git_repos["dotfiles/vim/bundle/CtrlP-Funky"]="git://github.com/tacahiroy/ctrlp-funky.git"
 git_repos["dotfiles/vim/bundle/DBExt"]="git://github.com/vim-scripts/dbext.vim.git"
 git_repos["dotfiles/vim/bundle/Detailed"]="git://github.com/rking/vim-detailed.git"
 git_repos["dotfiles/vim/bundle/EnhancedCommentify"]="git://github.com/hrp/EnhancedCommentify.git"
