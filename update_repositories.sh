@@ -37,6 +37,7 @@ git_repos["dotfiles/ssh"]="git:dotfiles/ssh"
 git_repos["dotfiles/vim"]="git:dotfiles/vim github github:dust70/vim"
 git_repos["dotfiles/zsh"]="git:dotfiles/zsh github github:dust70/zsh"
 
+git_repos["dotfiles/bash/LiquidPrompt"]="git://github.com/nojhan/liquidprompt.git"
 git_repos["dotfiles/git/GitIgnoreRepo"]="git://github.com/github/gitignore.git"
 
 git_repos["dotfiles/vim/PHPCTags"]="git://github.com/dust70/PHPCTags.git"
