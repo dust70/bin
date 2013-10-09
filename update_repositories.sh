@@ -34,6 +34,7 @@ git_repos["dotfiles/mutt"]="git:dotfiles/mutt"
 git_repos["dotfiles/shell"]="git:dotfiles/shell github github:dust70/shell"
 git_repos["dotfiles/Skype"]="git:dotfiles/Skype"
 git_repos["dotfiles/ssh"]="git:dotfiles/ssh"
+git_repos["dotfiles/task"]="git:dotfiles/task"
 git_repos["dotfiles/vim"]="git:dotfiles/vim github github:dust70/vim"
 git_repos["dotfiles/zsh"]="git:dotfiles/zsh github github:dust70/zsh"
 
