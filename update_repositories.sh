@@ -120,6 +120,7 @@ git_repos["php/contao-check"]="git://github.com/contao/check.git"
 #}}}
 
 # {{{ subversion repositories
+svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.8"
 #}}}
 #}}}
 
