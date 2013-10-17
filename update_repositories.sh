@@ -134,7 +134,7 @@ branches["dotfiles/ssh"]="desktop"
 
 branches["dotfiles/vim/bundle/PythonMode"]="master"
 
-branches["etc"]="amalthea desktop ganymed himalia io lysithea pasiphae server"
+branches["etc"]="amalthea desktop europa ganymed himalia io lysithea pasiphae server"
 
 branches["php/contao"]="develop lts"
 
