@@ -127,14 +127,14 @@ svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.8"
 # {{{ branches to use
 branches["Documents"]="desktop"
 
-branches["dotfiles"]="desktop himalia lysithea pasiphae"
+branches["dotfiles"]="desktop himalia"
 branches["dotfiles/config"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
 
 branches["dotfiles/vim/bundle/PythonMode"]="master"
 
-branches["etc"]="amalthea desktop europa ganymed himalia io lysithea pasiphae server"
+branches["etc"]="amalthea desktop europa ganymed himalia io server"
 
 branches["php/contao"]="develop lts"
 
