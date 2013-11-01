@@ -117,6 +117,8 @@ git_repos["gentoo/catalyst"]="git:gentoo/catalyst"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
 git_repos["php/contao-check"]="git://github.com/contao/check.git"
+
+git_repos["arch/aur"]="git://pkgbuild.com/aur-mirror.git"
 #}}}
 
 # {{{ subversion repositories
