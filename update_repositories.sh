@@ -136,6 +136,7 @@ branches["Documents"]="desktop"
 
 branches["dotfiles"]="desktop himalia"
 branches["dotfiles/config"]="desktop"
+branches["dotfiles/dotmail"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
 
