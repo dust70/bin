@@ -115,7 +115,7 @@ git_repos["work/self/todo"]="git:work/self/todo"
 
 git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
 
-git_repos["gentoo/catalyst"]="git:gentoo/catalyst"
+#git_repos["gentoo/catalyst"]="git:gentoo/catalyst"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
 git_repos["php/contao-check"]="git://github.com/contao/check.git"
