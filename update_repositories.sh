@@ -109,13 +109,13 @@ git_repos["latex/invoice"]="git:latex/invoice"
 
 git_repos["pass"]="git:pass"
 
-git_repos["work/self/docs"]="git:work/self/docs"
-git_repos["work/self/scripts"]="git:work/self/scripts"
-git_repos["work/self/todo"]="git:work/self/todo"
+git_repos["work/docs"]="git:work/self/docs"
+git_repos["work/scripts"]="git:work/self/scripts"
+git_repos["work/todo"]="git:work/self/todo"
 
-git_repos["work/stauzebach/documents"]="git:work/stauzebach/documents"
+git_repos["stauzebach/documents"]="stauzebach.git:stauzebach/documents"
 
-#git_repos["gentoo/catalyst"]="git:gentoo/catalyst"
+git_repos["distributions/catalyst"]="git:distributions/catalyst"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
 git_repos["php/contao-check"]="git://github.com/contao/check.git"
