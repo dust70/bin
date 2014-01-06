@@ -1,6 +1,0 @@
-#!/bin/sh
-aumix -v -1
-VOLUME=$(aumix -q | awk -F, '/vol/ {print $2}')
-osd_cat -b percentage -P $VOLUME -d 1 -c blue -A center -p middle
-
-# vim: filetype=sh textwidth=80
