@@ -30,6 +30,7 @@ git_repos["dotfiles/git"]="git:dotfiles/git github github:dust70/git"
 git_repos["dotfiles/gnupg"]="git:dotfiles/gnupg"
 git_repos["dotfiles/local"]="git:dotfiles/local github github:dust70/local"
 git_repos["dotfiles/mutt"]="git:dotfiles/mutt"
+git_repos["dotfiles/pass"]="git:dotfiles/pass"
 git_repos["dotfiles/shell"]="git:dotfiles/shell github github:dust70/shell"
 git_repos["dotfiles/Skype"]="git:dotfiles/Skype"
 git_repos["dotfiles/ssh"]="git:dotfiles/ssh"
@@ -107,14 +108,13 @@ git_repos["html/www.rene-six.de"]="git:html/www.rene-six.de"
 
 git_repos["latex/invoice"]="git:latex/invoice"
 
-git_repos["pass"]="git:pass"
-
 git_repos["work/docs"]="git:work/self/docs"
 git_repos["work/scripts"]="git:work/self/scripts"
 git_repos["work/todo"]="git:work/self/todo"
 
 git_repos["stauzebach/documents"]="stauzebach.git:documents"
 
+git_repos["distributions/arch_packages"]="git:distributions/arch_packages"
 git_repos["distributions/catalyst"]="git:distributions/catalyst"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
