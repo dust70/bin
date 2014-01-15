@@ -108,13 +108,11 @@ git_repos["html/www.rene-six.de"]="git:html/www.rene-six.de"
 
 git_repos["latex/invoice"]="git:latex/invoice"
 
-git_repos["work/docs"]="git:work/self/docs"
-git_repos["work/scripts"]="git:work/self/scripts"
-git_repos["work/todo"]="git:work/self/todo"
+git_repos["work/docs"]="git:work/docs"
+git_repos["work/scripts"]="git:work/scripts"
 
 git_repos["stauzebach/documents"]="stauzebach.git:documents"
 
-#git_repos["distributions/arch_packages"]="git:distributions/arch_packages"
 git_repos["distributions/catalyst"]="git:distributions/catalyst"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
