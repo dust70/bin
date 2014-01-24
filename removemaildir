@@ -3,14 +3,19 @@ PATH=/bin:/usr/bin
 DIR=${1:-~/Maildir}
 
 for d in "${DIR}"/*; do
-    [ "${d}" = "${DIR}/INBOX" ]              && continue
-    [ "${d}" = "${DIR}/INBOX.Archives" ]     && continue
-    [ "${d}" = "${DIR}/INBOX.Drafts" ]       && continue
-    [ "${d}" = "${DIR}/INBOX.Junk" ]         && continue
-    [ "${d}" = "${DIR}/INBOX.Sent" ]         && continue
-    [ "${d}" = "${DIR}/INBOX.Templates" ]    && continue
-    [ "${d}" = "${DIR}/INBOX.Trash" ]        && continue
-    [ $(find "${d}" -type f | wc -l) -eq 0 ] && rmdir -v "${d}"/cur "${d}"/new "${d}"/tmp "${d}"
+    [ "${d}" = "${DIR}/cur" ]       && continue
+    [ "${d}" = "${DIR}/new" ]       && continue
+    [ "${d}" = "${DIR}/tmp" ]       && continue
+    [ "${d}" = "${DIR}" ]           && continue
+    [ "${d}" = "${DIR}/archives" ]  && continue
+    [ "${d}" = "${DIR}/drafts" ]    && continue
+    [ "${d}" = "${DIR}/junk" ]      && continue
+    [ "${d}" = "${DIR}/sent" ]      && continue
+    [ "${d}" = "${DIR}/templates" ] && continue
+    [ "${d}" = "${DIR}/trash" ]     && continue
+
+    [ $(find "${d}" -type f | wc -l) -eq 0 ] &&
+        rmdir -v "${d}"/cur "${d}"/new "${d}"/tmp "${d}"
 done
 
 exit 0
