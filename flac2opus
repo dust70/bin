@@ -1,0 +1,10 @@
+#! /bin/zsh
+
+for i in ~/Music/**/*.flac ~/MP3/**/*.mp3; do
+    declare input=$i output=${i/Music/Opus}
+    output=${output/flac/opus}
+    output=${output/mp3/opus}
+
+    mkdir -p "$(dirname ${output})"
+    ffmpeg -i "$input" -c:a libopus -b:a 128k -n "${output}"
+done
