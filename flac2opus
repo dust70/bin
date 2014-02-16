@@ -7,4 +7,5 @@ for i in ~/Music/**/*.flac ~/MP3/**/*.mp3; do
 
     mkdir -p "$(dirname ${output})"
     ffmpeg -i "$input" -c:a libopus -b:a 128k -n "${output}"
+    sync
 done
