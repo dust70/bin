@@ -1,0 +1,9 @@
+#! /bin/zsh
+
+for i in ~/Music/**/*.flac; do
+    declare input=$i output=${i/Music/MP3}
+    output=${output/flac/mp3}
+
+    mkdir -p "$(dirname ${output})"
+    ffmpeg -i "$input" -c:a libmp3lame -b:a 128k -n "${output}"
+done
