@@ -85,7 +85,6 @@ git_repos["dotfiles/vim/bundle/Syntastic"]="git://github.com/scrooloose/syntasti
 git_repos["dotfiles/vim/bundle/Tagbar"]="git://github.com/majutsushi/tagbar.git"
 git_repos["dotfiles/vim/bundle/TagbarPHPCTags"]="git://github.com/vim-php/tagbar-phpctags.vim.git"
 git_repos["dotfiles/vim/bundle/UnImpaired"]="git://github.com/tpope/vim-unimpaired.git"
-git_repos["dotfiles/vim/bundle/Unite"]="git://github.com/Shougo/unite.vim.git"
 git_repos["dotfiles/vim/bundle/YankRing"]="git://github.com/vim-scripts/YankRing.vim.git"
 git_repos["dotfiles/vim/PHPCTags"]="git://github.com/vim-php/phpctags.git"
 
