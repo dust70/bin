@@ -5,6 +5,6 @@ for i in ~/Music/**/*.flac; do
     output=${output/flac/mp3}
 
     mkdir -p "$(dirname ${output})"
-    ffmpeg -i "$input" -c:a libmp3lame -b:a 128k -n "${output}"
+    ffmpeg -i "$input" -c:a libmp3lame -b:a 192k -n "${output}"
     sync
 done
