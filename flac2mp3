@@ -8,3 +8,11 @@ for i in ~/Music/**/*.flac; do
     ffmpeg -i "$input" -c:a libmp3lame -b:a 192k -n "${output}"
     sync
 done
+
+for i in ~/Music/**/*.mp3; do
+    declare input=$i output=${i/Music/MP3}
+    dirname="$(dirname ${output})"
+
+    mkdir -p "${dirname}"
+    cp -v "${input}" "${dirname}"
+done
