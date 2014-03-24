@@ -24,20 +24,20 @@ trap "(cd ${oldpwd}; cd ${pwd}) >> /dev/null || return 1" EXIT KILL SIGINT SIGTE
 # {{{ git repositories
 git_repos["dotfiles"]="git:dotfiles"
 git_repos["dotfiles/Skype"]="git:dotfiles/Skype"
-git_repos["dotfiles/bash"]="git:dotfiles/bash github github:dust70/bash"
+git_repos["dotfiles/bash"]="git:dotfiles/bash github github:renatius-de/bash"
 git_repos["dotfiles/config"]="git:dotfiles/config"
 git_repos["dotfiles/dotmail"]="git:dotfiles/dotmail"
-git_repos["dotfiles/git"]="git:dotfiles/git github github:dust70/git"
+git_repos["dotfiles/git"]="git:dotfiles/git github github:renatius-de/git"
 git_repos["dotfiles/gnupg"]="git:dotfiles/gnupg"
-git_repos["dotfiles/local"]="git:dotfiles/local github github:dust70/local"
+git_repos["dotfiles/local"]="git:dotfiles/local github github:renatius-de/local"
 git_repos["dotfiles/mutt"]="git:dotfiles/mutt"
 git_repos["dotfiles/pass"]="git:dotfiles/pass"
-git_repos["dotfiles/shell"]="git:dotfiles/shell github github:dust70/shell"
+git_repos["dotfiles/shell"]="git:dotfiles/shell github github:renatius-de/shell"
 git_repos["dotfiles/ssh"]="git:dotfiles/ssh"
-git_repos["dotfiles/subversion"]="git:dotfiles/subversion github github:dust70/subversion"
+git_repos["dotfiles/subversion"]="git:dotfiles/subversion github github:renatius-de/subversion"
 git_repos["dotfiles/task"]="git:dotfiles/task"
-git_repos["dotfiles/vim"]="git:dotfiles/vim github github:dust70/vim"
-git_repos["dotfiles/zsh"]="git:dotfiles/zsh github github:dust70/zsh"
+git_repos["dotfiles/vim"]="git:dotfiles/vim github github:renatius-de/vim"
+git_repos["dotfiles/zsh"]="git:dotfiles/zsh github github:renatius-de/zsh"
 
 git_repos["dotfiles/bash/LiquidPrompt"]="git://github.com/nojhan/liquidprompt.git"
 git_repos["dotfiles/git/GitIgnoreRepo"]="git://github.com/github/gitignore.git"
@@ -88,7 +88,7 @@ git_repos["dotfiles/vim/bundle/UnImpaired"]="git://github.com/tpope/vim-unimpair
 git_repos["dotfiles/vim/bundle/YankRing"]="git://github.com/vim-scripts/YankRing.vim.git"
 git_repos["dotfiles/vim/PHPCTags"]="git://github.com/vim-php/phpctags.git"
 
-git_repos["bin"]="git:bin github github:dust70/bin"
+git_repos["bin"]="git:bin github github:renatius-de/bin"
 
 git_repos["etc"]="git:etc"
 
