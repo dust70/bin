@@ -112,6 +112,7 @@ git_repos["php/zendframework"]="git://github.com/zendframework/zf2.git"
 #git_repos["arch/aur"]="git://pkgbuild.com/aur-mirror.git"
 
 git_repos["software/git"]="git://github.com/git/git"
+git_repos["software/pro-git"]="git://github.com/progit/progit.git"
 #}}}
 
 # {{{ subversion repositories
