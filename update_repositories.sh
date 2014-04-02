@@ -102,6 +102,11 @@ function git_clean () {
 
 # {{{ function git_run
 function git_run() {
+    if [ ! -x $(which git > /dev/nul 2>&1) ]; then
+        # quit silently
+        return 0
+    fi
+
     if [ ${#@} -ne 3 ]; then
         echo "wrong number of parameter"
         return 1
@@ -146,7 +151,7 @@ function git_run() {
 
         mkdir -p "$(dirname ${tmpdir})"
 
-        git clone -q -o origin "${local_remotes["origin"]}" "${tmpdir}" >> /dev/null || return 1
+        git clone -o origin "${local_remotes["origin"]}" "${tmpdir}" >> /dev/null || return 1
         mv "${tmpdir}" "${1}" >> /dev/null
 
         cd "${1}" >> /dev/null
@@ -202,6 +207,11 @@ function git_run() {
 
 # {{{ function svn_run
 function svn_run() {
+    if [ ! -x $(which svn > /dev/nul 2>&1) ]; then
+        # quit silently
+        return 0
+    fi
+
     if [ ${#@} -ne 2 ]; then
         echo "wrong number of parameter"
         return 1
