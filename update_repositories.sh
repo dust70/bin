@@ -102,7 +102,7 @@ function git_clean () {
 
 # {{{ function git_run
 function git_run() {
-    if [ ! -x $(which git > /dev/nul 2>&1) ]; then
+    if [ ! -x $(which git > /dev/null 2>&1) ]; then
         # quit silently
         return 0
     fi
@@ -207,7 +207,7 @@ function git_run() {
 
 # {{{ function svn_run
 function svn_run() {
-    if [ ! -x $(which svn > /dev/nul 2>&1) ]; then
+    if [ ! -x $(which svn > /dev/null 2>&1) ]; then
         # quit silently
         return 0
     fi
