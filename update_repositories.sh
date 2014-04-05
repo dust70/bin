@@ -81,8 +81,6 @@ branches["dotfiles/dotmail"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
 
-branches["dotfiles/vim/bundle/PythonMode"]="master"
-
 branches["etc"]="amalthea desktop europa ganymed himalia io server"
 
 branches["php/contao"]="develop"
