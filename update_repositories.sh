@@ -182,7 +182,7 @@ function git_run() {
             git remote update -p "${key}" &> /dev/null || return 1
             git remote prune "${key}" &> /dev/null || return 1
 
-            git fetch -q "${key}" &> /dev/null || return 1
+            git fetch "${key}" &> /dev/null || return 1
             git fetch -q -t "${key}" &> /dev/null || return 1
         done
 
