@@ -52,6 +52,8 @@ git_repos["latex/invoice"]="git:latex/invoice"
 git_repos["work/docs"]="git:work/docs"
 git_repos["work/scripts"]="git:work/scripts"
 
+git_repos["work/vagrant"]="git:work/vagrant"
+
 git_repos["stauzebach/documents"]="stauzebach.git:documents"
 
 git_repos["distributions/catalyst"]="git:distributions/catalyst"
