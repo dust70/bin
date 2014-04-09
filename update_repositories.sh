@@ -83,7 +83,7 @@ branches["dotfiles/dotmail"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
 
-branches["etc"]="amalthea desktop europa ganymed himalia io server"
+branches["etc"]="amalthea callisto desktop europa ganymed himalia io server raspi"
 
 branches["php/zend_framework"]="develop"
 #}}}
