@@ -9,10 +9,11 @@ for i in ~/Music/**/*.mp3; do
 done
 
 for i in ~/Music/**/*.flac; do
+    echo ${i}
     declare input=$i output=${i/Music/MP3}
     output=${output/flac/mp3}
 
     mkdir -p "$(dirname ${output})"
-    ffmpeg -i "$input" -c:a libmp3lame -b:a 192k -n "${output}"
+    ffmpeg -loglevel quiet -i "$input" -c:a libmp3lame -b:a 192k -n "${output}"
     sync
 done
