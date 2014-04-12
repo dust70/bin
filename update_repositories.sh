@@ -257,6 +257,7 @@ for key in $(echo -e "${!git_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " "); 
     echo -n "${repo}..."
     git_run "${repo}" "${git_repos[${key}]}" "${branches[${key}]}" || exit 1
     unset repo
+    sync
     echo " done!"
 done
 
@@ -265,6 +266,7 @@ for key in $(echo -e "${!svn_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " "); 
     echo -n "${repo}..."
     svn_run "${repo}" "${svn_repos[${key}]}" || exit 1
     unset repo
+    sync
     echo " done!"
 done
 
