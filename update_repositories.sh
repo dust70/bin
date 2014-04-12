@@ -77,7 +77,7 @@ svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.8"
 # {{{ branches to use
 branches["Documents"]="desktop"
 
-branches["dotfiles"]="desktop himalia"
+branches["dotfiles"]="callisto desktop himalia"
 branches["dotfiles/config"]="desktop"
 branches["dotfiles/dotmail"]="desktop"
 branches["dotfiles/local"]="desktop"
