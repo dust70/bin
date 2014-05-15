@@ -1,12 +1,13 @@
 #!/bin/sh
 PATH=/bin:/usr/bin
 DIR=${1:-~/Maildir}
+OFFLINEIMAP=${2:-~/.offlineimap}
 
 for d in "${DIR}"/*; do
+    [ "${d}" = "${DIR}" ]           && continue
     [ "${d}" = "${DIR}/cur" ]       && continue
     [ "${d}" = "${DIR}/new" ]       && continue
     [ "${d}" = "${DIR}/tmp" ]       && continue
-    [ "${d}" = "${DIR}" ]           && continue
     [ "${d}" = "${DIR}/archives" ]  && continue
     [ "${d}" = "${DIR}/drafts" ]    && continue
     [ "${d}" = "${DIR}/junk" ]      && continue
@@ -14,8 +15,13 @@ for d in "${DIR}"/*; do
     [ "${d}" = "${DIR}/templates" ] && continue
     [ "${d}" = "${DIR}/trash" ]     && continue
 
-    [ $(find "${d}" -type f | wc -l) -eq 0 ] &&
+    if [ $(find "${d}" -type f | wc -l) -eq 0 ]; then
         rmdir -v "${d}"/cur "${d}"/new "${d}"/tmp "${d}"
+        if [ -d "${OFFLINEIMAP}" ]; then
+            maildir=$(basename "${d}")
+            find "${OFFLINEIMAP}" -iname "${maildir}" -delete
+        fi
+    fi
 done
 
 exit 0
