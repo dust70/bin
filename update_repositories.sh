@@ -61,10 +61,9 @@ git_repos["distributions/catalyst"]="git:distributions/catalyst"
 
 git_repos["php/contao"]="git://github.com/contao/core.git"
 git_repos["php/contao-check"]="git://github.com/contao/check.git"
+git_repos["php/opcache-gui"]="git://github.com/amnuts/opcache-gui.git"
 git_repos["php/zendframework_1"]="git://github.com/zendframework/zf1.git"
 git_repos["php/zendframework_2"]="git://github.com/zendframework/zf2.git"
-
-#git_repos["arch/aur"]="git://pkgbuild.com/aur-mirror.git"
 
 git_repos["software/git"]="git://github.com/git/git"
 git_repos["software/pro-git"]="git://github.com/progit/progit.git"
