@@ -1,5 +1,4 @@
 #!/bin/bash
-#set -x
 
 if ! $(which keychain > /dev/null 2>&1); then
     echo "please install keychain"
@@ -15,6 +14,6 @@ for i in "${ssh_keys_pub[@]}"; do
     ((j++))
 done
 
-keychain "${ssh_keys[@]}" F91E87BC
+keychain --clear --timeout 10080  "${ssh_keys[@]}" F91E87BC
 
 # vim: foldmethod=marker textwidth=80 filetype=sh
