@@ -17,7 +17,7 @@ for i in ~/Music/**/*.flac; do
     if $(which ffmpeg >> /dev/null); then
         ffmpeg -loglevel quiet -i "${input}" -c:a libmp3lame -b:a 192k -n "${output}"
     elif $(which avconv >> /dev/null); then
-        avconv -loglevel quiet -i "${input}" -c:a libmp3lame -b:a 192k "${output}"
+        avconv -loglevel quiet -i "${input}" -c:a libmp3lame -b:a 192k -n "${output}"
     fi
     sync
 done
