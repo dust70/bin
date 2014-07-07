@@ -57,10 +57,10 @@ git_repos["work/vagrant"]="git:work/vagrant bitbucket bitbucket:renatius_de/vagr
 
 git_repos["stauzebach/documents"]="stauzebach.git:documents"
 
-git_repos["distributions/catalyst"]="git:distributions/catalyst"
+#git_repos["distributions/catalyst"]="git:distributions/catalyst"
 
-git_repos["php/contao"]="git://github.com/contao/core.git"
-git_repos["php/contao-check"]="git://github.com/contao/check.git"
+#git_repos["php/contao"]="git://github.com/contao/core.git"
+#git_repos["php/contao-check"]="git://github.com/contao/check.git"
 git_repos["php/opcache-gui"]="git://github.com/amnuts/opcache-gui.git"
 git_repos["php/zendframework_1"]="git://github.com/zendframework/zf1.git"
 git_repos["php/zendframework_2"]="git://github.com/zendframework/zf2.git"
