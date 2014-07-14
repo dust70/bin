@@ -68,12 +68,13 @@ git_repos["php/zendframework_2"]="git://github.com/zendframework/zf2.git"
 git_repos["software/git"]="git://github.com/git/git"
 git_repos["software/pro-git"]="git://github.com/progit/progit.git"
 
-git_repos["cbn/preisverbleich-backend"]="git@bitbucket.org:ostec/preisvergleich-backend.git"
-git_repos["cbn/preisvergleich-eu"]="git@bitbucket.org:bzapf/preisvergleich.eu.git"
-git_repos["cbn/preisvergleich-frontend"]="git@bitbucket.org:ostec/preisvergleich-frontend.git"
-git_repos["cbn/preisvergleich-update"]="git@bitbucket.org:ostec/preisvergleich-update.git"
-git_repos["cbn/shopbewertung"]="git@bitbucket.org:bzapf/shopbewertung.git"
-git_repos["cbn/shoprocket"]="git@bitbucket.org:ostec/shoprocket.git"
+git_repos["cbn/database"]="bitbucket:bzapf/datenbank.git"
+git_repos["cbn/preisverbleich-backend"]="bitbucket:ostec/preisvergleich-backend.git"
+git_repos["cbn/preisvergleich-eu"]="bitbucket:bzapf/preisvergleich.eu.git"
+git_repos["cbn/preisvergleich-frontend"]="bitbucket:ostec/preisvergleich-frontend.git"
+git_repos["cbn/preisvergleich-update"]="bitbucket:ostec/preisvergleich-update.git"
+git_repos["cbn/shopbewertung"]="bitbucket:bzapf/shopbewertung.git"
+git_repos["cbn/shoprocket"]="bitbucket:ostec/shoprocket.git"
 #}}}
 
 # {{{ subversion repositories
@@ -93,6 +94,14 @@ branches["dotfiles/ssh"]="desktop"
 branches["etc"]="desktop europa ganymed himalia io server"
 
 branches["php/zend_framework"]="develop"
+
+branches["cbn/database"]="master development"
+branches["cbn/preisverbleich-backend"]="master development"
+branches["cbn/preisvergleich-eu"]="master development"
+branches["cbn/preisvergleich-frontend"]="master development"
+branches["cbn/preisvergleich-update"]="master development"
+branches["cbn/shopbewertung"]="master development"
+branches["cbn/shoprocket"]="master development"
 #}}}
 
 # {{{ function git_clean
