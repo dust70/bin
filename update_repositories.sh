@@ -67,6 +67,13 @@ git_repos["php/zendframework_2"]="git://github.com/zendframework/zf2.git"
 
 git_repos["software/git"]="git://github.com/git/git"
 git_repos["software/pro-git"]="git://github.com/progit/progit.git"
+
+git_repos["cbn/preisverbleich-backend"]="git@bitbucket.org:ostec/preisvergleich-backend.git"
+git_repos["cbn/preisvergleich-eu"]="git@bitbucket.org:bzapf/preisvergleich.eu.git"
+git_repos["cbn/preisvergleich-frontend"]="git@bitbucket.org:ostec/preisvergleich-frontend.git"
+git_repos["cbn/preisvergleich-update"]="git@bitbucket.org:ostec/preisvergleich-update.git"
+git_repos["cbn/shopbewertung"]="git@bitbucket.org:bzapf/shopbewertung.git"
+git_repos["cbn/shoprocket"]="git@bitbucket.org:ostec/shoprocket.git"
 #}}}
 
 # {{{ subversion repositories
