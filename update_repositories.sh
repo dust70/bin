@@ -16,12 +16,8 @@ declare -A git_repos
 declare -A svn_repos
 #}}}
 
-# {{{ trap function
-trap "(cd ${oldpwd}; cd ${pwd}) >> /dev/null || return 1" EXIT KILL SIGINT SIGTERM
-#}}}
-
 # {{{ repositories to check for
-# {{{ git repositories
+# {{{ dotfiles
 git_repos["dotfiles"]="git:dotfiles"
 git_repos["dotfiles/Skype"]="git:dotfiles/Skype"
 git_repos["dotfiles/bash"]="git:dotfiles/bash github github:renatius-de/bash"
@@ -39,7 +35,9 @@ git_repos["dotfiles/task"]="git:dotfiles/task"
 git_repos["dotfiles/tmux"]="git:dotfiles/tmux github github:renatius-de/tmux"
 git_repos["dotfiles/vim"]="git:dotfiles/vim github github:renatius-de/vim"
 git_repos["dotfiles/zsh"]="git:dotfiles/zsh github github:renatius-de/zsh"
+#}}}
 
+# {{{ misc
 git_repos["bin"]="git:bin github github:renatius-de/bin"
 
 git_repos["etc"]="git:etc"
@@ -47,7 +45,9 @@ git_repos["etc"]="git:etc"
 git_repos["gitolite-admin"]="git:gitolite-admin"
 
 git_repos["html/www.rene-six.de"]="git:html/www.rene-six.de"
+#}}}
 
+# {{{ work
 git_repos["latex/invoice"]="git:latex/invoice"
 
 git_repos["work/docs"]="git:work/docs"
@@ -56,7 +56,20 @@ git_repos["work/scripts"]="git:work/scripts"
 git_repos["work/vagrant"]="git:work/vagrant bitbucket bitbucket:renatius_de/vagrant"
 
 git_repos["stauzebach/documents"]="stauzebach.git:documents"
+#}}}
 
+# {{{ cbn
+git_repos["cbn/behat"]="bitbucket:ostec/preisvergleich-behat.git"
+git_repos["cbn/database"]="bitbucket:bzapf/datenbank.git"
+git_repos["cbn/preisvergleich"]="bitbucket:ostec/preisvergleich-frontend.git"
+git_repos["cbn/preisvergleich.eu"]="bitbucket:bzapf/preisvergleich.eu.git"
+git_repos["cbn/shopbewertung"]="bitbucket:bzapf/shopbewertung.git"
+git_repos["cbn/shoprocket"]="bitbucket:ostec/shoprocket.git"
+git_repos["cbn/soap-backend"]="bitbucket:ostec/preisvergleich-backend.git"
+git_repos["cbn/update"]="bitbucket:ostec/preisvergleich-update.git"
+#}}}
+
+# {{{ software
 #git_repos["distributions/catalyst"]="git:distributions/catalyst"
 
 #git_repos["php/contao"]="git://github.com/contao/core.git"
@@ -68,40 +81,30 @@ git_repos["php/zendframework_2"]="git://github.com/zendframework/zf2.git"
 git_repos["software/git"]="git://github.com/git/git"
 git_repos["software/pro-git"]="git://github.com/progit/progit.git"
 
-git_repos["cbn/database"]="bitbucket:bzapf/datenbank.git"
-git_repos["cbn/preisverbleich-backend"]="bitbucket:ostec/preisvergleich-backend.git"
-git_repos["cbn/preisvergleich-eu"]="bitbucket:bzapf/preisvergleich.eu.git"
-git_repos["cbn/preisvergleich-frontend"]="bitbucket:ostec/preisvergleich-frontend.git"
-git_repos["cbn/preisvergleich-update"]="bitbucket:ostec/preisvergleich-update.git"
-git_repos["cbn/shopbewertung"]="bitbucket:bzapf/shopbewertung.git"
-git_repos["cbn/shoprocket"]="bitbucket:ostec/shoprocket.git"
-#}}}
-
-# {{{ subversion repositories
 svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.8"
 #}}}
 #}}}
 
 # {{{ branches to use
-branches["Documents"]="desktop"
-
+# {{{ dotfiles
 branches["dotfiles"]="callisto desktop himalia"
 branches["dotfiles/config"]="desktop"
 branches["dotfiles/dotmail"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
+#}}}
 
+# {{{ misc
 branches["etc"]="desktop europa ganymed himalia io server"
+#}}}
 
-branches["php/zend_framework"]="develop"
-
-branches["cbn/database"]="master development"
-branches["cbn/preisverbleich-backend"]="master development"
-branches["cbn/preisvergleich-eu"]="master development"
-branches["cbn/preisvergleich-frontend"]="master development"
-branches["cbn/preisvergleich-update"]="master development"
+# {{{ cbn
+branches["cbn/preisvergleich"]="master development"
 branches["cbn/shopbewertung"]="master development"
 branches["cbn/shoprocket"]="master development"
+branches["cbn/soap-backend"]="master development"
+branches["cbn/update"]="master development"
+#}}}
 #}}}
 
 # {{{ function git_clean
@@ -169,7 +172,7 @@ function git_run() {
         git clone -o origin "${local_remotes["origin"]}" "${tmpdir}" >> /dev/null || return 1
         mv "${tmpdir}" "${1}" >> /dev/null
 
-        cd "${1}" >> /dev/null
+        pushd "${1}" >> /dev/null
 
         local -a local_branches=("$(git name-rev --name-only origin/HEAD)" ${3})
         for branch in "${local_branches[@]}"; do
@@ -186,8 +189,9 @@ function git_run() {
         git submodule -q foreach --recursive "git checkout -q \"${local_branches[0]}\"" >> /dev/null || return 1
 
         rmdir -p "$(dirname ${tmpdir})" &> /dev/null || true
+        popd >> /dev/null
     else
-        cd "${1}" >> /dev/null
+        pushd "${1}" >> /dev/null
         local -a local_branches=("$(git name-rev --name-only origin/HEAD)" ${3})
 
         for key in ${!local_remotes[@]}; do
@@ -216,6 +220,7 @@ function git_run() {
         git checkout -q "${local_branches[0]}" >> /dev/null || return 1
 
         while ! $(git_clean >> /dev/null); do true; done
+        popd >> /dev/null
     fi
 }
 #}}}
@@ -232,13 +237,13 @@ function svn_run() {
         return 1
     fi
 
-    mkdir -p "$(dirname ${1})" >> /dev/null 2>&1 || (
-        echo "Couldn't create parent directories for" ${1}
+    mkdir -p "$(dirname "${1}")" >> /dev/null 2>&1 || (
+        echo "Couldn't create parent directories for ${1}"
         return 1
     )
 
     if [ ! -d "${1}"/.svn ]; then
-        local -r tmpdir=/tmp/${1}
+        local -r tmpdir=/tmp/"${1}"
 
         [ -f "${1}" ] && rm "${1}" >> /dev/null
 
@@ -252,13 +257,17 @@ function svn_run() {
 
         mv "${tmpdir}" "${1}" >> /dev/null
 
-        cd "${1}" >> /dev/null
+        pushd "${1}" >> /dev/null
 
         rmdir -p "$(dirname ${tmpdir})" >> /dev/null 2>&1 || true
+
+        popd >> /dev/null
     else
-        cd "${1}" >> /dev/null
+        pushd "${1}" >> /dev/null
 
         svn update --force &> /dev/null || return 1
+
+        popd >> /dev/null
     fi
 }
 #}}}
