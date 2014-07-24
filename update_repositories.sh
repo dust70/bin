@@ -78,6 +78,9 @@ git_repos["php/opcache-gui"]="git://github.com/amnuts/opcache-gui.git"
 git_repos["php/zendframework_1"]="git://github.com/zendframework/zf1.git"
 git_repos["php/zendframework_2"]="git://github.com/zendframework/zf2.git"
 
+git_repos["php/phpunit"]="git://github.com/sebastianbergmann/phpunit.git"
+git_repos["php/phpcpd"]="git://github.com/sebastianbergmann/phpcpd.git"
+
 git_repos["software/git"]="git://github.com/git/git"
 git_repos["software/pro-git"]="git://github.com/progit/progit.git"
 
