@@ -106,7 +106,7 @@ branches["etc"]="desktop europa ganymed himalia io server"
 #}}}
 
 # {{{ projects
-git_repos["projects/invoicing"]="master development"
+branches["projects/invoicing"]="master development"
 #}}}
 
 # {{{ cbn
