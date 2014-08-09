@@ -47,6 +47,10 @@ git_repos["gitolite-admin"]="git:gitolite-admin"
 git_repos["html/www.rene-six.de"]="git:html/www.rene-six.de"
 #}}}
 
+# {{{ projects
+git_repos["projects/invoicing"]="git:projects/stauzebach_invoicing"
+#}}}
+
 # {{{ work
 git_repos["latex/invoice"]="git:latex/invoice"
 
@@ -99,6 +103,10 @@ branches["dotfiles/ssh"]="desktop"
 
 # {{{ misc
 branches["etc"]="desktop europa ganymed himalia io server"
+#}}}
+
+# {{{ projects
+git_repos["projects/invoicing"]="master development"
 #}}}
 
 # {{{ cbn
