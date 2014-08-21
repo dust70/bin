@@ -1,7 +1,7 @@
 #!/bin/bash
-for arg in "$@"; do
-    if [ -d $arg  ]; then
-        find $arg \
+for arg in "${@}"; do
+    if [ -d ${arg}  ]; then
+        find ${arg} \
             -iname "*.c" \
             -or -iname "*.cc" \
             -or -iname "*.cpp" \
@@ -11,11 +11,11 @@ for arg in "$@"; do
             -or -iname "*.php" \
             -or -iname "*.py" \
             -or -iname "*.tpl" \
-            > $arg/cscope.files
+            > ${arg}/cscope.files
 
-        cscope -b -q -i $arg/cscope.files -f $arg/cscope.out
-        rm -f $arg/cscope.files
+        cscope -b -q -i ${arg}/cscope.files -f ${arg}/cscope.out
+        rm -f ${arg}/cscope.files
     else
-        echo "Directory not found: $arg"
+        echo "Directory not found: ${arg}"
     fi
 done
