@@ -1,0 +1,170 @@
+#!/bin/bash
+
+ATTACH=false
+COMPOSER=false
+SESSION_NAME="Main"
+VAGRANT=false
+VIRTUALENV=false
+WORKING_DIR="${HOME}"
+
+typeset -i WINDOW_COUNT=5
+
+while getopts "aCehvVc:n:s:r:" opt; do
+    case "${opt}" in
+        h)
+            echo "usage: $(basename ${0}) [options]"
+            echo -e "    -a\t\t\tattach session after creating"
+            echo -e "    -c direcotory\tworking dir, if empty homedir is used"
+            echo -e "    -C\t\t\trun composer in working dir"
+            echo -e "    -e\t\t\tcreate virtual environment for python2"
+            echo -e "    -h\t\t\tshow this help"
+            echo -e "    -n number\t\tnumber of windows created"
+            echo -e "    -r command\t\trun this command before creating environment"
+            echo -e "    -s session-name\tname of this session, if empty session name is main"
+            echo -e "    -v\t\t\tbe verbose"
+            echo -e "    -V\t\t\tadd window for vagrant"
+            exit 0
+            ;;
+        a)
+            ATTACH=true
+            ;;
+        c)
+            WORKING_DIR="${OPTARG}"
+            ;;
+        C)
+            COMPOSER=true
+            ;;
+        e)
+            VIRTUALENV=true
+            ;;
+        n)
+            typeset -i WINDOW_COUNT=${OPTARG}
+            ;;
+        s)
+            SESSION_NAME="${OPTARG}"
+            ;;
+        r)
+            typeset -r CUSTOM_COMMAND="${OPTARG}"
+            ;;
+        v)
+            set -x
+            ;;
+        V)
+            VAGRANT=true
+            ;;
+        :)
+            echo "Option -${OPTARG} requires an argument."
+            exit 1
+            ;;
+        *)
+            echo "Invalid option: -${OPTARG}"
+            echo "use -h for help"
+            exit 1
+            ;;
+    esac
+done
+
+_log() {
+    if [ "${2}" = "ERROR"  ] ; then
+        echo -en "\033[31m";
+    else
+        echo -en "\033[32m";
+    fi
+    echo ${1};
+    echo -en "\033[0m"
+}
+export -f _log;
+
+_pushd() {
+    if [ -d "${1}" ]; then
+        pushd "${1}" 1> /dev/null
+        return 0
+    else
+        return 1
+    fi
+}
+
+_popd() {
+    popd 1> /dev/null
+}
+
+createSession() {
+    tmux has-session -t "${SESSION_NAME}" 2> /dev/null && return 0
+
+    tmux new-session -d -c "${WORKING_DIR}" -s "${SESSION_NAME}" -n Shell || return 1
+
+    for i in $(seq 2 ${WINDOW_COUNT}); do
+        tmux new-window -c "${WORKING_DIR}" -t "${SESSION_NAME}":${i} -n Shell || return 1
+    done
+
+    tmux bind-key C new-window -c "${WORKING_DIR}" -t "${SESSION_NAME}" -n Shell || return 1
+    return 0
+}
+
+selectWindow() {
+    COUNTER=${WINDOW_COUNT}
+    while [ ${COUNTER} -gt 0 ]; do
+        tmux select-window -t "${SESSION_NAME}":${COUNTER} || return 1
+        let COUNTER-=1
+    done
+    return 0
+}
+
+withVagrant() {
+    tmux new-window -c "${WORKING_DIR}/vagrant" -t "${SESSION_NAME}" -n Vagrant || return 0
+    tmux bind-key V new-window -c "${WORKING_DIR}/vagrant" -t "${SESSION_NAME}" -n Vagrant || return 0
+    return 0
+}
+
+attachSession() {
+    tmux has-session -t "${SESSION_NAME}" || return 1
+    tmux attach-session -t "${SESSION_NAME}"
+    return 0
+}
+
+composer() {
+    _log "run composer..."
+    _pushd "${WORKING_DIR}" || return 1
+    if $(which php > /dev/null 2>&1) && [[ -e composer.json ]]; then
+        mkdir -p bin
+        curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
+        php bin/composer.phar update
+        php bin/composer.phar install
+    fi
+    _popd
+    _log " done"
+    return 0
+}
+
+virtualEnvironment() {
+    _log "creating virtual envirenment..."
+    _pushd "${WORKING_DIR}" || return 1
+    for i in $(seq 1 ${WINDOW_COUNT}); do
+        tmux send-keys -t "${SESSION_NAME}":${i} "workon ${SESSION_NAME,,}" C-m
+    done
+    _popd
+    _log " done"
+    return 0
+}
+
+if ${COMPOSER}; then
+    composer || exit 1
+fi
+
+createSession || exit 1
+
+if ${VAGRANT}; then
+    withVagrant
+fi
+
+if ${VIRTUALENV}; then
+    virtualEnvironment || exit 1
+fi
+
+selectWindow || exit 1
+
+if ${ATTACH}; then
+    attachSession || exit 1
+fi
+
+exit 0
