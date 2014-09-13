@@ -48,7 +48,7 @@ git_repos["html/www.rene-six.de"]="git:html/www.rene-six.de"
 #}}}
 
 # {{{ projects
-git_repos["projects/invoicing"]="git:projects/stauzebach_invoicing"
+git_repos["projects/invoicing"]="git:projects/invoicing"
 #}}}
 
 # {{{ work
