@@ -9,7 +9,7 @@ WORKING_DIR="${HOME}"
 
 typeset -i WINDOW_COUNT=5
 
-while getopts "aCehvVc:n:s:r:" opt; do
+while getopts "aCehvc:n:s:r:V:" opt; do
     case "${opt}" in
         h)
             echo "usage: $(basename ${0}) [options]"
@@ -22,7 +22,7 @@ while getopts "aCehvVc:n:s:r:" opt; do
             echo -e "    -r command\t\trun this command before creating environment"
             echo -e "    -s session-name\tname of this session, if empty session name is main"
             echo -e "    -v\t\t\tbe verbose"
-            echo -e "    -V\t\t\tadd window for vagrant"
+            echo -e "    -V number\t\tadd window for vagrant"
             exit 0
             ;;
         a)
@@ -50,6 +50,7 @@ while getopts "aCehvVc:n:s:r:" opt; do
             set -x
             ;;
         V)
+            typeset -i VAGRANT_COUNT=${OPTARG}
             VAGRANT=true
             ;;
         :)
@@ -111,8 +112,11 @@ selectWindow() {
 }
 
 withVagrant() {
-    tmux new-window -c "${WORKING_DIR}/vagrant" -t "${SESSION_NAME}" -n Vagrant || return 0
-    tmux bind-key V new-window -c "${WORKING_DIR}/vagrant" -t "${SESSION_NAME}" -n Vagrant || return 0
+    COUNTER=${VAGRANT_COUNT}
+    while [ ${COUNTER} -gt 0 ] ; do
+        tmux new-window -c "${WORKING_DIR}/vagrant" -t "${SESSION_NAME}" -n Vagrant || return 0
+        let COUNTER-=1
+    done
     return 0
 }
 
