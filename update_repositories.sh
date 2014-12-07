@@ -69,7 +69,7 @@ git_repos["cbn/preisvergleich"]="bitbucket:ostec/preisvergleich-frontend.git"
 git_repos["cbn/preisvergleich.eu"]="bitbucket:bzapf/preisvergleich.eu.git"
 git_repos["cbn/shopbewertung"]="bitbucket:bzapf/shopbewertung.git"
 git_repos["cbn/shoprocket"]="bitbucket:ostec/shoprocket.git"
-git_repos["cbn/soap-backend"]="bitbucket:ostec/preisvergleich-backend.git"
+git_repos["cbn/soap"]="bitbucket:ostec/preisvergleich-backend.git"
 git_repos["cbn/update"]="bitbucket:ostec/preisvergleich-update.git"
 #}}}
 
