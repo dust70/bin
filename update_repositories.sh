@@ -64,9 +64,8 @@ git_repos["stauzebach/documents"]="stauzebach.git:documents"
 
 # {{{ cbn
 git_repos["cbn/behat"]="bitbucket:ostec/preisvergleich-behat.git"
-git_repos["cbn/database"]="bitbucket:bzapf/datenbank.git"
+git_repos["cbn/library"]="bitbucket:ostec/preisvergleich-library.git"
 git_repos["cbn/preisvergleich"]="bitbucket:ostec/preisvergleich-frontend.git"
-git_repos["cbn/preisvergleich.eu"]="bitbucket:bzapf/preisvergleich.eu.git"
 git_repos["cbn/shopbewertung"]="bitbucket:bzapf/shopbewertung.git"
 git_repos["cbn/shoprocket"]="bitbucket:ostec/shoprocket.git"
 git_repos["cbn/soap"]="bitbucket:ostec/preisvergleich-backend.git"
