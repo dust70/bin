@@ -85,7 +85,7 @@ git_repos["php/phpunit"]="git://github.com/sebastianbergmann/phpunit.git"
 git_repos["php/phpcpd"]="git://github.com/sebastianbergmann/phpcpd.git"
 
 git_repos["software/git"]="git://github.com/git/git"
-git_repos["software/pro-git"]="git://github.com/progit/progit.git"
+#git_repos["software/pro-git"]="git://github.com/progit/progit.git"
 git_repos["software/python-guide"]="git://github.com/kennethreitz/python-guide.git"
 
 svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.8"
