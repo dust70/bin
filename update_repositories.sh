@@ -59,7 +59,7 @@ git_repos["work/scripts"]="git:work/scripts"
 
 git_repos["work/vagrant"]="git:work/vagrant bitbucket bitbucket:renatius_de/vagrant"
 
-git_repos["stauzebach/documents"]="stauzebach.git:documents"
+#git_repos["stauzebach/documents"]="stauzebach.git:documents"
 #}}}
 
 # {{{ cbn
