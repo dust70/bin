@@ -110,10 +110,12 @@ branches["projects/invoicing"]="master development"
 #}}}
 
 # {{{ cbn
+branches["cbn/behat"]="master development"
+branches["cbn/library"]="master development"
 branches["cbn/preisvergleich"]="master development"
 branches["cbn/shopbewertung"]="master development"
 branches["cbn/shoprocket"]="master development"
-branches["cbn/soap-backend"]="master development"
+branches["cbn/soap"]="master development"
 branches["cbn/update"]="master development"
 #}}}
 #}}}
