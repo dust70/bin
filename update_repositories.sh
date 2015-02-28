@@ -66,7 +66,7 @@ git_repos["work/vagrant"]="git:work/vagrant bitbucket bitbucket:renatius_de/vagr
 git_repos["cbn/behat"]="bitbucket:ostec/preisvergleich-behat.git"
 git_repos["cbn/library"]="bitbucket:ostec/preisvergleich-library.git"
 git_repos["cbn/preisvergleich"]="bitbucket:ostec/preisvergleich-frontend.git"
-git_repos["cbn/shopbewertung"]="bitbucket:bzapf/shopbewertung.git"
+git_repos["cbn/shopbewertung"]="bitbucket:renatius_de/shopbewertung.git"
 git_repos["cbn/shoprocket"]="bitbucket:ostec/shoprocket.git"
 git_repos["cbn/soap"]="bitbucket:ostec/preisvergleich-backend.git"
 git_repos["cbn/update"]="bitbucket:ostec/preisvergleich-update.git"
@@ -110,7 +110,6 @@ branches["projects/invoicing"]="master development"
 #}}}
 
 # {{{ cbn
-branches["cbn/behat"]="master development"
 branches["cbn/library"]="master development"
 branches["cbn/preisvergleich"]="master development"
 branches["cbn/shopbewertung"]="master development"
