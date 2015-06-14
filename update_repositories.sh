@@ -18,62 +18,61 @@ declare -A svn_repos
 
 # {{{ repositories to check for
 # {{{ dotfiles
-git_repos["dotfiles"]="git:dotfiles"
-git_repos["dotfiles/Skype"]="git:dotfiles/Skype"
-git_repos["dotfiles/bash"]="git:dotfiles/bash github github:renatius-de/bash"
-git_repos["dotfiles/config"]="git:dotfiles/config"
-git_repos["dotfiles/dotmail"]="git:dotfiles/dotmail"
-git_repos["dotfiles/git"]="git:dotfiles/git github github:renatius-de/git"
-git_repos["dotfiles/gnupg"]="git:dotfiles/gnupg"
-# git_repos["dotfiles/local"]="git:dotfiles/local github github:renatius-de/local"
-git_repos["dotfiles/mutt"]="git:dotfiles/mutt"
-git_repos["dotfiles/pass"]="git:dotfiles/pass"
-git_repos["dotfiles/shell"]="git:dotfiles/shell github github:renatius-de/shell"
-git_repos["dotfiles/ssh"]="git:dotfiles/ssh"
-# git_repos["dotfiles/subversion"]="git:dotfiles/subversion github github:renatius-de/subversion"
-# git_repos["dotfiles/task"]="git:dotfiles/task"
-git_repos["dotfiles/tmux"]="git:dotfiles/tmux github github:renatius-de/tmux"
-git_repos["dotfiles/vim"]="git:dotfiles/vim github github:renatius-de/vim"
-git_repos["dotfiles/zsh"]="git:dotfiles/zsh github github:renatius-de/zsh"
+git_repos["dotfiles"]="git@git.renatius.net:dotfiles"
+git_repos["dotfiles/Skype"]="git@git.renatius.net:dotfiles/Skype"
+git_repos["dotfiles/bash"]="git@git.renatius.net:dotfiles/bash github git@github.com:renatius-de/bash"
+git_repos["dotfiles/config"]="git@git.renatius.net:dotfiles/config"
+git_repos["dotfiles/dotmail"]="git@git.renatius.net:dotfiles/dotmail"
+git_repos["dotfiles/git"]="git@git.renatius.net:dotfiles/git github git@github.com:renatius-de/git"
+git_repos["dotfiles/gnupg"]="git@git.renatius.net:dotfiles/gnupg"
+# git_repos["dotfiles/local"]="git@git.renatius.net:dotfiles/local github git@github.com:renatius-de/local"
+git_repos["dotfiles/mutt"]="git@git.renatius.net:dotfiles/mutt"
+git_repos["dotfiles/pass"]="git@git.renatius.net:dotfiles/pass"
+git_repos["dotfiles/shell"]="git@git.renatius.net:dotfiles/shell github git@github.com:renatius-de/shell"
+git_repos["dotfiles/ssh"]="git@git.renatius.net:dotfiles/ssh"
+# git_repos["dotfiles/subversion"]="git@git.renatius.net:dotfiles/subversion github git@github.com:renatius-de/subversion"
+# git_repos["dotfiles/task"]="git@git.renatius.net:dotfiles/task"
+git_repos["dotfiles/tmux"]="git@git.renatius.net:dotfiles/tmux github git@github.com:renatius-de/tmux"
+git_repos["dotfiles/vim"]="git@git.renatius.net:dotfiles/vim github git@github.com:renatius-de/vim"
+git_repos["dotfiles/zsh"]="git@git.renatius.net:dotfiles/zsh github git@github.com:renatius-de/zsh"
 #}}}
 
 # {{{ misc
-git_repos["bin"]="git:bin github github:renatius-de/bin"
+git_repos["bin"]="git@git.renatius.net:bin github git@github.com:renatius-de/bin"
 
-git_repos["etc"]="git:etc"
+git_repos["etc"]="git@git.renatius.net:etc"
 
-git_repos["gitolite-admin"]="git:gitolite-admin"
+git_repos["gitolite-admin"]="git@git.renatius.net:gitolite-admin"
 
-git_repos["html/www.rene-six.de"]="git:html/www.rene-six.de"
+git_repos["html/www.rene-six.de"]="git@git.renatius.net:html/www.rene-six.de"
 #}}}
 
 # {{{ projects
-git_repos["projects/invoicing"]="git:projects/invoicing"
+git_repos["projects/invoicing"]="git@git.renatius.net:projects/invoicing"
 #}}}
 
 # {{{ work
-git_repos["latex/invoice"]="git:latex/invoice"
+git_repos["latex/invoice"]="git@git.renatius.net:latex/invoice"
 
-git_repos["work/docs"]="git:work/docs"
-git_repos["work/scripts"]="git:work/scripts"
+git_repos["work/docs"]="git@git.renatius.net:work/docs"
+git_repos["work/scripts"]="git@git.renatius.net:work/scripts"
 
-git_repos["work/vagrant"]="git:work/vagrant bitbucket bitbucket:renatius_de/vagrant"
+git_repos["work/vagrant"]="git@git.renatius.net:work/vagrant bitbucket git@bitbucket.org:renatius_de/vagrant"
 
-#git_repos["stauzebach/documents"]="stauzebach.git:documents"
+#git_repos["stauzebach/documents"]="stauzebach.git@git.renatius.net:documents"
 #}}}
 
 # {{{ cbn
-git_repos["cbn/behat"]="bitbucket:ostec/preisvergleich-behat.git"
-git_repos["cbn/library"]="bitbucket:ostec/preisvergleich-library.git"
-git_repos["cbn/preisvergleich"]="bitbucket:ostec/preisvergleich-frontend.git"
-git_repos["cbn/shopbewertung"]="bitbucket:renatius_de/shopbewertung.git"
-git_repos["cbn/shoprocket"]="bitbucket:ostec/shoprocket.git"
-git_repos["cbn/soap"]="bitbucket:ostec/preisvergleich-backend.git"
-git_repos["cbn/update"]="bitbucket:ostec/preisvergleich-update.git"
+git_repos["cbn/behat"]="git@bitbucket.org:ostec/preisvergleich-behat.git"
+git_repos["cbn/library"]="git@bitbucket.org:ostec/preisvergleich-library.git"
+git_repos["cbn/preisvergleich"]="git@bitbucket.org:ostec/preisvergleich-frontend.git"
+git_repos["cbn/shoprocket"]="git@bitbucket.org:ostec/shoprocket.git"
+git_repos["cbn/soap"]="git@bitbucket.org:ostec/preisvergleich-backend.git"
+git_repos["cbn/update"]="git@bitbucket.org:ostec/preisvergleich-update.git"
 #}}}
 
 # {{{ software
-#git_repos["distributions/catalyst"]="git:distributions/catalyst"
+#git_repos["distributions/catalyst"]="git@git.renatius.net:distributions/catalyst"
 
 #git_repos["php/contao"]="git://github.com/contao/core.git"
 #git_repos["php/contao-check"]="git://github.com/contao/check.git"
