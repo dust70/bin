@@ -44,31 +44,31 @@ git_repos["etc"]="git@git.renatius.net:etc"
 
 git_repos["gitolite-admin"]="git@git.renatius.net:gitolite-admin"
 
-git_repos["html/www.rene-six.de"]="git@git.renatius.net:html/www.rene-six.de"
+# git_repos["html/www.rene-six.de"]="git@git.renatius.net:html/www.rene-six.de"
 #}}}
 
 # {{{ projects
-git_repos["projects/invoicing"]="git@git.renatius.net:projects/invoicing"
+git_repos["projects/invoicing"]="git@bitbucket.org:renatius_de/invoicing.git"
 #}}}
 
 # {{{ work
 git_repos["latex/invoice"]="git@git.renatius.net:latex/invoice"
 
-git_repos["work/docs"]="git@git.renatius.net:work/docs"
-git_repos["work/scripts"]="git@git.renatius.net:work/scripts"
+# git_repos["work/docs"]="git@git.renatius.net:work/docs"
+# git_repos["work/scripts"]="git@git.renatius.net:work/scripts"
 
-git_repos["work/vagrant"]="git@git.renatius.net:work/vagrant bitbucket git@bitbucket.org:renatius_de/vagrant"
+git_repos["work/vagrant"]="git@bitbucket.org:renatius_de/vagrant"
 
 #git_repos["stauzebach/documents"]="stauzebach.git@git.renatius.net:documents"
 #}}}
 
 # {{{ cbn
-git_repos["cbn/behat"]="git@bitbucket.org:ostec/preisvergleich-behat.git"
-git_repos["cbn/library"]="git@bitbucket.org:ostec/preisvergleich-library.git"
-git_repos["cbn/preisvergleich"]="git@bitbucket.org:ostec/preisvergleich-frontend.git"
+git_repos["cbn/preisvergleich-backend"]="git@bitbucket.org:ostec/preisvergleich-backend.git"
+git_repos["cbn/preisvergleich-behat"]="git@bitbucket.org:ostec/preisvergleich-behat.git"
+git_repos["cbn/preisvergleich-frontend"]="git@bitbucket.org:ostec/preisvergleich-frontend.git"
+git_repos["cbn/preisvergleich-library"]="git@bitbucket.org:ostec/preisvergleich-library.git"
+git_repos["cbn/preisvergleich-update"]="git@bitbucket.org:ostec/preisvergleich-update.git"
 git_repos["cbn/shoprocket"]="git@bitbucket.org:ostec/shoprocket.git"
-git_repos["cbn/soap"]="git@bitbucket.org:ostec/preisvergleich-backend.git"
-git_repos["cbn/update"]="git@bitbucket.org:ostec/preisvergleich-update.git"
 #}}}
 
 # {{{ software
@@ -76,16 +76,16 @@ git_repos["cbn/update"]="git@bitbucket.org:ostec/preisvergleich-update.git"
 
 #git_repos["php/contao"]="git://github.com/contao/core.git"
 #git_repos["php/contao-check"]="git://github.com/contao/check.git"
-git_repos["php/opcache-gui"]="git://github.com/amnuts/opcache-gui.git"
+# git_repos["php/opcache-gui"]="git://github.com/amnuts/opcache-gui.git"
 git_repos["php/zendframework_1"]="git://github.com/zendframework/zf1.git"
 git_repos["php/zendframework_2"]="git://github.com/zendframework/zf2.git"
 
 git_repos["php/phpunit"]="git://github.com/sebastianbergmann/phpunit.git"
-git_repos["php/phpcpd"]="git://github.com/sebastianbergmann/phpcpd.git"
+# git_repos["php/phpcpd"]="git://github.com/sebastianbergmann/phpcpd.git"
 
 git_repos["software/git"]="git://github.com/git/git"
 #git_repos["software/pro-git"]="git://github.com/progit/progit.git"
-git_repos["software/python-guide"]="git://github.com/kennethreitz/python-guide.git"
+# git_repos["software/python-guide"]="git://github.com/kennethreitz/python-guide.git"
 
 svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.8"
 #}}}
@@ -95,7 +95,6 @@ svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.8"
 # {{{ dotfiles
 branches["dotfiles"]="desktop himalia"
 branches["dotfiles/config"]="desktop"
-branches["dotfiles/dotmail"]="desktop"
 branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
 #}}}
@@ -105,16 +104,15 @@ branches["etc"]="desktop europa ganymed himalia io server"
 #}}}
 
 # {{{ projects
-branches["projects/invoicing"]="master development"
+branches["projects/invoicing"]="development"
 #}}}
 
 # {{{ cbn
-branches["cbn/library"]="master development"
-branches["cbn/preisvergleich"]="master development"
-branches["cbn/shopbewertung"]="master development"
-branches["cbn/shoprocket"]="master development"
-branches["cbn/soap"]="master development"
-branches["cbn/update"]="master development"
+branches["cbn/preisvergleich-backend"]="development"
+branches["cbn/preisvergleich-frontend"]="development"
+branches["cbn/preisvergleich-library"]="development"
+branches["cbn/preisvergleich-update"]="development"
+branches["cbn/shoprocket"]="development"
 #}}}
 #}}}
 
