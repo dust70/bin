@@ -68,7 +68,7 @@ git_repos["cbn/preisvergleich-behat"]="git@bitbucket.org:ostec/preisvergleich-be
 git_repos["cbn/preisvergleich-frontend"]="git@bitbucket.org:ostec/preisvergleich-frontend.git"
 git_repos["cbn/preisvergleich-library"]="git@bitbucket.org:ostec/preisvergleich-library.git"
 git_repos["cbn/preisvergleich-update"]="git@bitbucket.org:ostec/preisvergleich-update.git"
-git_repos["cbn/shoprocket"]="git@bitbucket.org:ostec/shoprocket.git"
+git_repos["cbn/profitmax"]="git@bitbucket.org:ostec/shoprocket.git"
 #}}}
 
 # {{{ software
