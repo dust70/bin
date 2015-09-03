@@ -25,13 +25,9 @@ git_repos["dotfiles/config"]="git@git.renatius.net:dotfiles/config"
 git_repos["dotfiles/dotmail"]="git@git.renatius.net:dotfiles/dotmail"
 git_repos["dotfiles/git"]="git@git.renatius.net:dotfiles/git github git@github.com:renatius-de/git"
 git_repos["dotfiles/gnupg"]="git@git.renatius.net:dotfiles/gnupg"
-# git_repos["dotfiles/local"]="git@git.renatius.net:dotfiles/local github git@github.com:renatius-de/local"
 git_repos["dotfiles/mutt"]="git@git.renatius.net:dotfiles/mutt"
-git_repos["dotfiles/pass"]="git@git.renatius.net:dotfiles/pass"
 git_repos["dotfiles/shell"]="git@git.renatius.net:dotfiles/shell github git@github.com:renatius-de/shell"
 git_repos["dotfiles/ssh"]="git@git.renatius.net:dotfiles/ssh"
-# git_repos["dotfiles/subversion"]="git@git.renatius.net:dotfiles/subversion github git@github.com:renatius-de/subversion"
-# git_repos["dotfiles/task"]="git@git.renatius.net:dotfiles/task"
 git_repos["dotfiles/tmux"]="git@git.renatius.net:dotfiles/tmux github git@github.com:renatius-de/tmux"
 git_repos["dotfiles/vim"]="git@git.renatius.net:dotfiles/vim github git@github.com:renatius-de/vim"
 git_repos["dotfiles/zsh"]="git@git.renatius.net:dotfiles/zsh github git@github.com:renatius-de/zsh"
@@ -43,8 +39,6 @@ git_repos["bin"]="git@git.renatius.net:bin github git@github.com:renatius-de/bin
 git_repos["etc"]="git@git.renatius.net:etc"
 
 git_repos["gitolite-admin"]="git@git.renatius.net:gitolite-admin"
-
-# git_repos["html/www.rene-six.de"]="git@git.renatius.net:html/www.rene-six.de"
 #}}}
 
 # {{{ projects
@@ -53,41 +47,6 @@ git_repos["projects/invoicing"]="git@bitbucket.org:renatius_de/invoicing.git"
 
 # {{{ work
 git_repos["latex/invoice"]="git@git.renatius.net:latex/invoice"
-
-# git_repos["work/docs"]="git@git.renatius.net:work/docs"
-# git_repos["work/scripts"]="git@git.renatius.net:work/scripts"
-
-git_repos["work/vagrant"]="git@bitbucket.org:renatius_de/vagrant"
-
-#git_repos["stauzebach/documents"]="stauzebach.git@git.renatius.net:documents"
-#}}}
-
-# {{{ cbn
-git_repos["cbn/preisvergleich-backend"]="git@bitbucket.org:ostec/preisvergleich-backend.git"
-git_repos["cbn/preisvergleich-behat"]="git@bitbucket.org:ostec/preisvergleich-behat.git"
-git_repos["cbn/preisvergleich-frontend"]="git@bitbucket.org:ostec/preisvergleich-frontend.git"
-git_repos["cbn/preisvergleich-library"]="git@bitbucket.org:ostec/preisvergleich-library.git"
-git_repos["cbn/preisvergleich-update"]="git@bitbucket.org:ostec/preisvergleich-update.git"
-git_repos["cbn/profitmax"]="git@bitbucket.org:ostec/shoprocket.git"
-#}}}
-
-# {{{ software
-#git_repos["distributions/catalyst"]="git@git.renatius.net:distributions/catalyst"
-
-#git_repos["php/contao"]="git://github.com/contao/core.git"
-#git_repos["php/contao-check"]="git://github.com/contao/check.git"
-# git_repos["php/opcache-gui"]="git://github.com/amnuts/opcache-gui.git"
-git_repos["php/zendframework_1"]="git://github.com/zendframework/zf1.git"
-git_repos["php/zendframework_2"]="git://github.com/zendframework/zf2.git"
-
-git_repos["php/phpunit"]="git://github.com/sebastianbergmann/phpunit.git"
-# git_repos["php/phpcpd"]="git://github.com/sebastianbergmann/phpcpd.git"
-
-git_repos["software/git"]="git://github.com/git/git"
-#git_repos["software/pro-git"]="git://github.com/progit/progit.git"
-# git_repos["software/python-guide"]="git://github.com/kennethreitz/python-guide.git"
-
-svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.8"
 #}}}
 #}}}
 
@@ -95,24 +54,15 @@ svn_repos["php/magento"]="http://svn.magentocommerce.com/source/branches/1.8"
 # {{{ dotfiles
 branches["dotfiles"]="desktop himalia"
 branches["dotfiles/config"]="desktop"
-branches["dotfiles/local"]="desktop"
 branches["dotfiles/ssh"]="desktop"
 #}}}
 
 # {{{ misc
-branches["etc"]="desktop europa ganymed himalia io server"
+branches["etc"]="ananke desktop europa ganymed himalia io lysithea server pasiphae"
 #}}}
 
 # {{{ projects
 branches["projects/invoicing"]="development"
-#}}}
-
-# {{{ cbn
-branches["cbn/preisvergleich-backend"]="development"
-branches["cbn/preisvergleich-frontend"]="development"
-branches["cbn/preisvergleich-library"]="development"
-branches["cbn/preisvergleich-update"]="development"
-branches["cbn/shoprocket"]="development"
 #}}}
 #}}}
 
@@ -130,7 +80,7 @@ function git_clean () {
 # {{{ function git_run
 function git_run() {
     if ! $(which git > /dev/null 2>&1); then
-        # quit silently
+        #quit silently
         return 0
     fi
 
@@ -237,7 +187,7 @@ function git_run() {
 # {{{ function svn_run
 function svn_run() {
     if ! $(which svn > /dev/null 2>&1); then
-        # quit silently
+        #quit silently
         return 0
     fi
 
@@ -286,7 +236,8 @@ mkdir -p "${repo_path}" >> /dev/null 2>&1 || (
     return 1
 )
 
-for key in $(echo -e "${!git_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " "); do
+for key in $(echo -e "${!git_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " ")
+do
     declare repo=${repo_path}/${key}
     echo -n "${repo}..."
     git_run "${repo}" "${git_repos[${key}]}" "${branches[${key}]}" || exit 1
@@ -295,7 +246,8 @@ for key in $(echo -e "${!git_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " "); 
     echo " done!"
 done
 
-for key in $(echo -e "${!svn_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " "); do
+for key in $(echo -e "${!svn_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " ")
+do
     declare repo=${repo_path}/${key}
     echo -n "${repo}..."
     svn_run "${repo}" "${svn_repos[${key}]}" || exit 1
@@ -304,9 +256,8 @@ for key in $(echo -e "${!svn_repos[@]}" | tr " " "\n" | sort -u | tr "\n" " "); 
     echo " done!"
 done
 
-#echo "# CVS repositories:" ${#cvs_repos[@]}
-echo "# GIT reposituries:" ${#git_repos[@]}
-echo "# SVN repositories:" ${#svn_repos[@]}
+echo "#GIT reposituries:" ${#git_repos[@]}
+echo "#SVN repositories:" ${#svn_repos[@]}
 unset branches cvs_repos git_repos svn_repos
 
 cd ${oldpwd} >> /dev/null
