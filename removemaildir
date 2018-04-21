@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 PATH=/bin:/usr/bin
 DIR=${1:-~/Maildir}
 OFFLINEIMAP=${2:-~/.offlineimap}
@@ -17,8 +17,11 @@ for d in "${DIR}"/*; do
 
     if [ $(find "${d}" -type f | wc -l) -eq 0 ]; then
         rmdir -v "${d}"/cur "${d}"/new "${d}"/tmp "${d}"
+
         if [ -d "${OFFLINEIMAP}" ]; then
             maildir=$(basename "${d}")
+
+            offlineimap --delete-folder="INBOX.${maildir/archives/Archives}"
             find "${OFFLINEIMAP}" -iname "${maildir}" -delete
         fi
     fi
